@@ -510,3 +510,21 @@ body {
     justify-content: space-around; } }
 
 /*# sourceMappingURL=style.css.map */
+
+.admin-send-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.admin-inputs-db {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
