@@ -1,0 +1,8 @@
+include parts/header
+.designer-info
+    img.designer-info-image(src='assets/images/img/all.jpg', alt='people in sunglasses')
+    #jsonItems(data-type='sunglasses', data-name='', data-sex='')
+        each glass in glasses
+            span=glass.name
+include parts/footer
+script(src='scripts/script.js')

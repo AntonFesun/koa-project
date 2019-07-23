@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+        title MS
+        link(rel='stylesheet', href='styles/style.css')
+        link(href='https://fonts.googleapis.com/css?family=Michroma|PT+Sans+Narrow|Playfair+Display', rel='stylesheet')
+    body
+        .header
+            .main-line
+                a.main-line-logo(href='/') ModaSoda
+                form.main-line-search(action='#')
+                    input.main-line-search-input(type='text', placeholder='Що шукаємо?')
+                    button.main-line-search-button Пошук
+        .bar
+            ul.bar-list
+                li.bar-list-elements
+                    a.bar-list-elements-links(href='men') Чоловічі
+                li.bar-list-elements
+                    a.bar-list-elements-links(href='women') Жіночі
+                li.bar-list-elements
+                    a.bar-list-elements-links(href='/') Бренди
+                li.bar-list-elements
+                    a.bar-list-elements-links(href='allsunglasses') Сонцезахисні окуляри
+                li.bar-list-elements
+                    a.bar-list-elements-links(href='rims') Оправи
