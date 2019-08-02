@@ -7,7 +7,7 @@ const router = new Router();
 router.get('fesunAdmin', ctrl.adminPage);
 router.get('adminCart', ctrl.adminCart);
 
-router.get('/', ctrl.homePage);
+router.get('', ctrl.homePage);
 router.get('all', ctrl.all);
 router.get('men', ctrl.menPage);
 router.get('men/sunglasses', ctrl.menPageSunglasses);
