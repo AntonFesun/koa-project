@@ -1,26 +1,38 @@
 include parts/header
 form(class="admin-send-form")
     input( class='admin-inputs-db' id="name" type="text" placeholder="Name of glasses" required)
-    input( class='admin-inputs-db' id="id" type="text" placeholder="Type Id" required)
-    input( class='admin-inputs-db' id="type" type="text" placeholder="Type of glasses" required)
-    input( class='admin-inputs-db' id="sex" type="text" placeholder="For women or for men" required)
+    input( class='admin-inputs-db' id="id" type="text" placeholder="Glasses Id" required)
     input( class='admin-inputs-db' id="shape" type="text" placeholder="Shape of glasses" required)
     input( class='admin-inputs-db' id="lenscolor" type="text" placeholder="Color of lenses" required)
-    input( class='admin-inputs-db' id="gradient" type="text" placeholder="Gradient" required)
-    input( class='admin-inputs-db' id="lenstype" type="text" placeholder="Type of lenses" required)
     input( class='admin-inputs-db' id="color" type="text" placeholder="Color of lenses" required)
     input( class='admin-inputs-db' id="material" type="text" placeholder="Material" required)
     input( class='admin-inputs-db' id="price" type="text" placeholder="Price" required)
-    input( class='admin-inputs-db' id="description" type="text" placeholder="Description" required)
-    input( class='admin-inputs-db' id="quantity" type="text" placeholder="Quantity" required)
+    input( class='admin-inputs-db' id="quantity" type="number" placeholder="Quantity" required)
+    input( class='admin-inputs-db' id="foto_1" type="file" name="file" placeholder="Foto" required)
+    input( class='admin-inputs-db' id="foto_2" type="file" name="file" placeholder="Foto" required)
+    input( class='admin-inputs-db' id="foto_3" type="file" name="file" placeholder="Foto" required)
+    select( class='admin-inputs-db' id="type")
+        option оправи
+        option сонцезахисні
+    select(class='admin-inputs-db' id="sex")
+        option(value="men") Чоловічі
+        option(value="women") Жіночі
+    label(for="lenstype") Поляризація
+    input( class='admin-inputs-db' id="lenstype" type="checkbox" placeholder="Polarizing of lenses" required)
+    label(for="gradient") Градієнт
+    input( class='admin-inputs-db' id="gradient" type="checkbox" placeholder="Gradient" required)
     button( class='admin-inputs-db' type="submit" id="save") Save
+    textarea( class='admin-inputs-db' id="description" placeholder="Description" required)
 
 .wrapper
     each glass in glasses
         .glass-item
+            img(src=glass.foto_1 width="150px")
+            img(src=glass.foto_2 width="150px")
+            img(src=glass.foto_3 width="150px")
             span="Name: " + glass.name
             span="ID: " + glass.id
             span= "Description: " + glass.description
             button(id=glass._id class="delete")="Delete"
             button(id=glass._id class="edit")="edit"
-script(src="scripts/script.js")
+script(src="scripts/admin.js")

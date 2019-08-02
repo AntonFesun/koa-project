@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const glassesSchema = new mongoose.Schema({
     name: String,
     id: String,
@@ -12,9 +13,9 @@ const glassesSchema = new mongoose.Schema({
     material: String,
     price: String,
     description: String,
-    foto_1 : {data: Buffer, contentType: String},
-    foto_2 : {data: Buffer, contentType: String},
-    foto_3 : {data: Buffer, contentType: String},
+    foto_1 : String,
+    foto_2 : String,
+    foto_3 : String,
     quantity: String
 });
 

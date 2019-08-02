@@ -1,6 +1,5 @@
 include parts/header
-.designer-info
-    img.designer-info-image(src='assets/images/img/rims-banner.jpg', alt='people in rims')
-    #mini-cart
+.brands
+    each glass in glasses
+        include parts/glasses-list
 include parts/footer
-script(src='scripts/script.js')

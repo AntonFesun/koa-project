@@ -1,64 +1,69 @@
-let doc = document;
-let saveButtonGlasses = doc.getElementById('save');
-saveButtonGlasses.onclick = function (event) {
-    event.preventDefault();
-    let object = {
-        name: doc.getElementById('name').value,
-        id: doc.getElementById('id').value,
-        type: doc.getElementById('type').value,
-        sex: doc.getElementById('sex').value,
-        shape: doc.getElementById('shape').value,
-        colorOfGlass: doc.getElementById('lenscolor').value,
-        gradient: doc.getElementById('gradient').value,
-        lenstype: doc.getElementById('lenstype').value,
-        colorOfFrame: doc.getElementById('color').value,
-        material: doc.getElementById('material').value,
-        price: doc.getElementById('price').value,
-        description: doc.getElementById('description').value,
-        quantity: doc.getElementById('quantity').value
-    };
-    saveNewGlasses(object);
-};
+const doc = document;
+const storage = window.localStorage;
+let toCartButtons = doc.querySelectorAll('[data-id]');
+let storageCart = [];
+let quantity = 0;
 
-let deleteButtons = doc.getElementsByClassName('delete');
-for(let i = 0; i < deleteButtons.length; i++) {
-    (function(){
-        deleteButtons[i].onclick = deleteGlass;
-    }());
+
+function addToCart (event) {
+    const dataAttribute = event.target.dataset;
+    storageCart = JSON.parse(storage.getItem('cart'));
+    if (storageCart !== null && storageCart.length > 0) {
+        let flag = storageCart.find(el => el.id === event.target.dataset.id);
+        if (flag === undefined) {
+            let newGlasses = {
+                id: dataAttribute.id,
+                quantity: 1,
+                name: dataAttribute.name,
+                identifier: dataAttribute.glassesidentificator,
+                shape: dataAttribute.shape,
+                sex: dataAttribute.sex,
+                colorOfGlass: dataAttribute.colorg,
+                gradient: dataAttribute.gradient,
+                lenstype: dataAttribute.lenstype,
+                colorOfFrame: dataAttribute.colorf,
+                material: dataAttribute.material,
+                price: dataAttribute.price,
+                description: dataAttribute.description,
+                foto_1: dataAttribute.foto_1,
+                foto_2: dataAttribute.foto_2,
+                foto_3: dataAttribute.foto_3
+            };
+            storageCart.push(newGlasses);
+            storage.setItem('cart', JSON.stringify(storageCart));
+        } else {
+            storageCart.forEach((el) => {
+                if (el.id === event.target.dataset.id) {
+                    ++el.quantity;
+                }
+            });
+            storage.setItem('cart', JSON.stringify(storageCart));
+        }
+    } else {
+        storageCart = [];
+        let newGlasses = {
+            id: dataAttribute.id,
+            quantity: 1,
+            name: dataAttribute.name,
+            identifier: dataAttribute.glassesidentificator,
+            shape: dataAttribute.shape,
+            sex: dataAttribute.sex,
+            colorOfGlass: dataAttribute.colorg,
+            gradient: dataAttribute.gradient,
+            lenstype: dataAttribute.lenstype,
+            colorOfFrame: dataAttribute.colorf,
+            material: dataAttribute.material,
+            price: dataAttribute.price,
+            description: dataAttribute.description,
+            foto_1: dataAttribute.foto_1,
+            foto_2: dataAttribute.foto_2,
+            foto_3: dataAttribute.foto_3
+        };
+        storageCart.push(newGlasses);
+        storage.setItem('cart', JSON.stringify(storageCart));
+    }
 }
 
-function saveNewGlasses(newGlassObject) {
-    return fetch('glass', {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        method: "post",
-        body: JSON.stringify(newGlassObject)
-    })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(e => {
-            console.log(e);
-        })
-}
-
-function deleteGlass(event) {
-    const id = event.target.id;
-    console.log(id);
-    return fetch(`deleteGlass/${id}`, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        method: "delete",
-        body: JSON.stringify({_id: id})
-    })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(e => {
-            console.log(e);
-        })
+for (let i = 0; i < toCartButtons.length; i++) {
+    toCartButtons[i].onclick = addToCart;
 }

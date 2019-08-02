@@ -4,24 +4,27 @@ html(lang='en')
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
         title MS
-        link(rel='stylesheet', href='styles/style.css')
-        link(href='https://fonts.googleapis.com/css?family=Michroma|PT+Sans+Narrow|Playfair+Display', rel='stylesheet')
+        link(rel='stylesheet', href='/styles/scss/style.css')
+        link(href='https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap', rel='stylesheet')
     body
-        .header
-            .main-line
-                a.main-line-logo(href='/') ModaSoda
-                form.main-line-search(action='#')
-                    input.main-line-search-input(type='text', placeholder='Що шукаємо?')
-                    button.main-line-search-button Пошук
-        .bar
-            ul.bar-list
-                li.bar-list-elements
-                    a.bar-list-elements-links(href='men') Чоловічі
-                li.bar-list-elements
-                    a.bar-list-elements-links(href='women') Жіночі
-                li.bar-list-elements
-                    a.bar-list-elements-links(href='/') Бренди
-                li.bar-list-elements
-                    a.bar-list-elements-links(href='allsunglasses') Сонцезахисні окуляри
-                li.bar-list-elements
-                    a.bar-list-elements-links(href='rims') Оправи
+        header
+            div.container-header
+                h1.site-name Za
+                    span Glasa
+                nav.navbar
+                    a.navbar-link(href='/') Головна
+                    a.navbar-link(href='/rims') Оправи
+                    a.navbar-link(href='/sunglasses') Сонцезахисні окуляри
+                    a.navbar-link(href='#brands') Бренди
+                .container-buttons
+                    .search
+                        input.search-text(type="text" placeholder="Пошук")
+                        button.search-toggle
+                            img(src='/assets/images/search.png')
+                    a.cart(href="/cart")
+                        img(src='/assets/images/cart.png')
+                        span.text Корзина
+
+
+
+

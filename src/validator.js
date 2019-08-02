@@ -18,9 +18,6 @@ exports.downloadValidator = validator({
        material: string().required(),
        price: string().required(),
        description: string().required(),
-       // foto_1 : "assets/images/glasses/sunglasses/escada/IGP7699.jpg",
-       // foto_2 : "assets/images/glasses/sunglasses/escada/IGP7700.jpg",
-       // foto_3 : "",
        quantity: string().required()
    })
 });

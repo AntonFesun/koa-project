@@ -1,5 +1,6 @@
 include parts/header
 .brands
     each glass in glasses
+        h3.brands-name-page=glass.name
         include parts/glasses-list
 include parts/footer
