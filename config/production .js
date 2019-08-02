@@ -1,4 +1,4 @@
 module.exports = {
     port: process.env.PORT,
-    databaseUrl: process.env.MONGODB_URI
+    databaseUrl: "mongodb+srv://AntonFesun:rpdstklmn1A@cluster0-3ulyp.mongodb.net/test?retryWrites=true&w=majority"
 };
