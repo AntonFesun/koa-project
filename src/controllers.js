@@ -14,7 +14,6 @@ exports.all = async (ctx) => {
 
 exports.cart = async (ctx) => {
     const items = await Order.find({});
-    console.log(JSON.parse(items.quantity_item));
     await ctx.render('admin-cart.pug', {items});
 };
 
@@ -51,7 +50,6 @@ exports.adminPage = async (ctx) => {
 
 exports.adminCart = async (ctx) => {
     const orders = await Order.find({}).populate('glasses');
-    console.log(orders);
     await ctx.render('admin-cart.pug', {
         orders
     });
@@ -59,7 +57,6 @@ exports.adminCart = async (ctx) => {
 
 exports.allSunglassesPage = async (ctx) => {
     const glasses = await Glasses.find({type: 'сонцезахисні'});
-    console.log(glasses);
     await ctx.render('allsunglasses.pug', {
         glasses
     });

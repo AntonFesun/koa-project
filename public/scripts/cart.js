@@ -69,27 +69,34 @@ function toFormData(dataObject) {
 }
 
 function renderGlasses() {
-    const glassesWrapper = document.getElementsByClassName('wrapper')[0];
-    cart.forEach((el) => {
-        let itemGlasses = document.createElement('div');
-        let glassesName = document.createElement('span');
-        let glassesId = document.createElement('span');
-        let glassesImg_1 = document.createElement('img');
-        let glassesImg_2 = document.createElement('img');
-        let glassesImg_3 = document.createElement('img');
+    const glassesWrapper = document.getElementsByClassName('item-wrapper')[0];
+    if (cart !== null) {
+        cart.forEach((el) => {
+            let itemGlasses = document.createElement('a');
+            let glassesName = document.createElement('span');
+            let glassesId = document.createElement('span');
+            let glassesPrice = document.createElement('span');
+            let glassesImg_1 = document.createElement('img');
 
-        itemGlasses.classList.add('item-glasses');
-        glassesName.innerHTML = el.name;
-        glassesId.innerHTML = el.id;
-        glassesImg_1.setAttribute('src', el.foto_1);
-        glassesImg_2.setAttribute('src', el.foto_2);
-        glassesImg_3.setAttribute('src', el.foto_3);
-        itemGlasses.appendChild(glassesName);
-        itemGlasses.appendChild(glassesId);
-        itemGlasses.appendChild(glassesImg_1);
-        itemGlasses.appendChild(glassesImg_2);
-        itemGlasses.appendChild(glassesImg_3);
-        glassesWrapper.appendChild(itemGlasses);
-    });
+            itemGlasses.classList.add('item');
+            glassesImg_1.classList.add('item-photo');
+            glassesName.classList.add('item-name');
+            glassesId.classList.add('item-id');
+            glassesPrice.classList.add('item-price');
+
+            glassesName.innerHTML = el.name;
+            glassesId.innerHTML = el.identifier;
+            glassesPrice.innerHTML = el.price;
+
+            glassesImg_1.setAttribute('src', el.foto_1);
+
+            itemGlasses.appendChild(glassesImg_1);
+            itemGlasses.appendChild(glassesName);
+            itemGlasses.appendChild(glassesId);
+            itemGlasses.appendChild(glassesPrice);
+            glassesWrapper.appendChild(itemGlasses);
+        });
+    }
+
 }
 
