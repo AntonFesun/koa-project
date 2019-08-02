@@ -132,9 +132,15 @@ exports.brands = async (ctx) => {
 exports.deleteGlass = async (ctx) => {
     const id = ctx.params.glassesId;
     const glass = await Glasses.findById(id);
-    fs.unlinkSync('public' + glass.foto_1);
-    fs.unlinkSync('public' + glass.foto_2);
-    fs.unlinkSync('public' + glass.foto_3);
+    if (fs.existsSync('public' + glass.foto_1)) {
+        fs.unlinkSync('public' + glass.foto_1);
+    }
+    if (fs.existsSync('public' + glass.foto_2)) {
+        fs.unlinkSync('public' + glass.foto_2);
+    }
+    if (fs.existsSync('public' + glass.foto_3)) {
+        fs.unlinkSync('public' + glass.foto_3);
+    }
     await glass.remove();
     ctx.body = {
         success: true
