@@ -1,0 +1,24 @@
+.item-wrapper
+    a.item(href="/glasses/"+glass._id)
+        img(src=glass.foto_1 class="item-photo")
+        span(class="item-name")=glass.name
+        span(class="item-id")=glass.id
+        span(class="item-price")=glass.price + " UAH"
+    button( class="add-to-cart"
+        data-name=glass.name
+        data-id=glass._id
+        data-glassesidentificator=glass.id
+        data-type=glass.type
+        data-sex=glass.sex
+        data-shape=glass.shape
+        data-colorg=glass.colorOfGlass
+        data-gradient=glass.gradient
+        data-lenstype=glass.lenstype
+        data-colorf=glass.colorOfFrame
+        data-material=glass.material
+        data-price=glass.price
+        data-description=glass.description
+        data-foto_1=glass.foto_1
+        data-foto_2=glass.foto_2
+        data-foto_3=glass.foto_3)
+

@@ -1,0 +1,27 @@
+include parts/header
+form(class="admin-send-form")
+    .inputs
+        input( class='admin-inputs-db' id="name" type="text" placeholder="Name of glasses" value=glasses.name required)
+        input( class='admin-inputs-db' id="id" type="text" placeholder="Glasses Id" value=glasses.id required)
+        input( class='admin-inputs-db' id="shape" type="text" placeholder="Shape of glasses" value=glasses.shape required)
+        input( class='admin-inputs-db' id="lenscolor" type="text" placeholder="Color of lenses" value=glasses.colorOfGlass required)
+        input( class='admin-inputs-db' id="color" type="text" placeholder="Color of frame" value=glasses.colorOfFrame required)
+        input( class='admin-inputs-db' id="material" type="text" placeholder="Material" value=glasses.material required)
+        input( class='admin-inputs-db' id="price" type="number" placeholder="Price" value=glasses.price required)
+        input( class='admin-inputs-db' id="quantity" type="number" placeholder="Quantity" value=glasses.quantity required)
+    .inputs
+        select( class='admin-inputs-db' id="type")
+            option оправи
+            option сонцезахисні
+        select(class='admin-inputs-db' id="sex")
+            option(value="чоловічі") Чоловічі
+            option(value="жіночі") Жіночі
+        .input-layer
+            label(for="lenstype") Поляризація
+            input( class='admin-inputs-db checkbox' id="lenstype" type="checkbox" placeholder="Polarizing of lenses" required)
+        .input-layer
+            label(for="gradient") Градієнт
+            input( class='admin-inputs-db checkbox' id="gradient" type="checkbox" placeholder="Gradient" required)
+        textarea( class='admin-inputs-db' id="description" placeholder="Description" rows=10 required)= glasses.description
+        button( class='admin-inputs-db' type="submit" id="update" data-id=glasses._id) Оновити
+script(src="/scripts/edit.js")

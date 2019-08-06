@@ -1,28 +1,32 @@
 include parts/header
 form(class="admin-send-form")
-    input( class='admin-inputs-db' id="name" type="text" placeholder="Name of glasses" required)
-    input( class='admin-inputs-db' id="id" type="text" placeholder="Glasses Id" required)
-    input( class='admin-inputs-db' id="shape" type="text" placeholder="Shape of glasses" required)
-    input( class='admin-inputs-db' id="lenscolor" type="text" placeholder="Color of lenses" required)
-    input( class='admin-inputs-db' id="color" type="text" placeholder="Color of lenses" required)
-    input( class='admin-inputs-db' id="material" type="text" placeholder="Material" required)
-    input( class='admin-inputs-db' id="price" type="text" placeholder="Price" required)
-    input( class='admin-inputs-db' id="quantity" type="number" placeholder="Quantity" required)
-    input( class='admin-inputs-db' id="foto_1" type="file" name="file" placeholder="Foto" required)
-    input( class='admin-inputs-db' id="foto_2" type="file" name="file" placeholder="Foto" required)
-    input( class='admin-inputs-db' id="foto_3" type="file" name="file" placeholder="Foto" required)
-    select( class='admin-inputs-db' id="type")
-        option оправи
-        option сонцезахисні
-    select(class='admin-inputs-db' id="sex")
-        option(value="men") Чоловічі
-        option(value="women") Жіночі
-    label(for="lenstype") Поляризація
-    input( class='admin-inputs-db' id="lenstype" type="checkbox" placeholder="Polarizing of lenses" required)
-    label(for="gradient") Градієнт
-    input( class='admin-inputs-db' id="gradient" type="checkbox" placeholder="Gradient" required)
-    button( class='admin-inputs-db' type="submit" id="save") Save
-    textarea( class='admin-inputs-db' id="description" placeholder="Description" required)
+    .inputs
+        input( class='admin-inputs-db' id="name" type="text" placeholder="Name of glasses" required)
+        input( class='admin-inputs-db' id="id" type="text" placeholder="Glasses Id" required)
+        input( class='admin-inputs-db' id="shape" type="text" placeholder="Shape of glasses" required)
+        input( class='admin-inputs-db' id="lenscolor" type="text" placeholder="Color of lenses" required)
+        input( class='admin-inputs-db' id="color" type="text" placeholder="Color of lenses" required)
+        input( class='admin-inputs-db' id="material" type="text" placeholder="Material" required)
+        input( class='admin-inputs-db' id="price" type="text" placeholder="Price" required)
+        input( class='admin-inputs-db' id="quantity" type="number" placeholder="Quantity" required)
+        input( class='admin-inputs-db' id="foto_1" type="file" name="file" placeholder="Foto" required)
+        input( class='admin-inputs-db' id="foto_2" type="file" name="file" placeholder="Foto" required)
+        input( class='admin-inputs-db' id="foto_3" type="file" name="file" placeholder="Foto" required)
+    .inputs
+        select( class='admin-inputs-db' id="type")
+            option оправи
+            option сонцезахисні
+        select(class='admin-inputs-db' id="sex")
+            option(value="чоловічі") Чоловічі
+            option(value="жіночі") Жіночі
+        .input-layer
+            label(for="lenstype") Поляризація
+            input( class='admin-inputs-db checkbox' id="lenstype" type="checkbox" placeholder="Polarizing of lenses" required)
+        .input-layer
+            label(for="gradient") Градієнт
+            input( class='admin-inputs-db checkbox' id="gradient" type="checkbox" placeholder="Gradient" required)
+        textarea( class='admin-inputs-db' id="description" placeholder="Description" rows=10 required)
+        button( class='admin-inputs-db' type="submit" id="save") Save
 
 .wrapper
     each glass in glasses
@@ -33,6 +37,6 @@ form(class="admin-send-form")
             span="Name: " + glass.name
             span="ID: " + glass.id
             span= "Description: " + glass.description
-            button(id=glass._id class="delete")="Delete"
-            button(id=glass._id class="edit")="edit"
+            button(id=glass._id class="delete")="Видалити"
+            a(href="editGlass/" + glass._id class="edit")="Змінити"
 script(src="scripts/admin.js")

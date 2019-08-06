@@ -1,6 +1,9 @@
 const Glasses = require('./models/glasses');
 const Order = require('./models/cart');
 const fs = require('fs');
+const SMS = require('sms_ru');
+const sms_id = '992125F5-1FEC-5A10-002A-98230CE716E6 ';
+const sms = new SMS(sms_id);
 
 exports.homePage = async (ctx) => {
     const brands = await Glasses.distinct("name");
@@ -14,7 +17,7 @@ exports.all = async (ctx) => {
 
 exports.cart = async (ctx) => {
     const items = await Order.find({});
-    await ctx.render('admin-cart.pug', {items});
+    await ctx.render('orders.pug', {items});
 };
 
 exports.cartUser = async (ctx) => {
@@ -31,6 +34,11 @@ exports.menPageSunglasses = async (ctx) => {
     await ctx.render('men_sunglasses.pug', {glasses});
 };
 
+exports.menPageRims = async (ctx) => {
+    const glasses = await Glasses.find({sex: 'чоловічі', type: 'оправи'});
+    await ctx.render('men_sunglasses.pug', {glasses});
+};
+
 exports.womenPage = async (ctx) => {
     const glasses = await Glasses.find({sex: 'жіночі'});
     await ctx.render('women.pug', {glasses});
@@ -41,6 +49,11 @@ exports.womenPageSunglasses = async (ctx) => {
     await ctx.render('women_sunglasses.pug', {glasses});
 };
 
+exports.womenPageRims = async (ctx) => {
+    const glasses = await Glasses.find({sex: 'жіночі', type: 'оправи'});
+    await ctx.render('women_rims.pug', {glasses});
+};
+
 exports.adminPage = async (ctx) => {
     const glasses = await Glasses.find({});
     await ctx.render('admin-panel.pug', {
@@ -48,9 +61,10 @@ exports.adminPage = async (ctx) => {
     });
 };
 
-exports.adminCart = async (ctx) => {
+exports.orders = async (ctx) => {
     const orders = await Order.find({}).populate('glasses');
-    await ctx.render('admin-cart.pug', {
+    console.log(orders);
+    await ctx.render('orders.pug', {
         orders
     });
 };
@@ -61,10 +75,12 @@ exports.allSunglassesPage = async (ctx) => {
         glasses
     });
 };
+
 exports.rimsPage = async (ctx) => {
     const glasses = await Glasses.find({type: 'оправи'});
     await ctx.render('rims.pug', {glasses});
 };
+
 exports.save = async(ctx) => {
     const body = ctx.request.body;
     const files = ctx.request.files;
@@ -95,7 +111,7 @@ exports.save = async(ctx) => {
     }
 };
 
-exports.order = async (ctx) => {
+exports.makeOrder = async (ctx) => {
   const body = ctx.request.body;
   let glasses = JSON.parse(body.glasses);
   const order = new Order({
@@ -104,6 +120,13 @@ exports.order = async (ctx) => {
       phone: body.phone,
       address: body.address,
       courier: body.courier
+  });
+  sms.sms_send({
+      to: '+380687819308',
+      text: 'Магазин: У вас нове замовлення!',
+      from: 'ZaGlaza'
+  }, (e) => {
+      console.log(e.description);
   });
   await order.save();
   ctx.body = {
@@ -145,5 +168,32 @@ exports.deleteGlass = async (ctx) => {
 };
 
 exports.editGlass = async (ctx) => {
-  console.log(ctx);
+    const glasses = await Glasses.findById(ctx.params.glassesId);
+    await ctx.render('edit_glasses.pug', {
+        glasses
+  })
+};
+
+exports.update = async (ctx) => {
+    const body = ctx.request.body;
+    const id = body.mongoId;
+    console.log(id);
+    const glasses = await Glasses.findById(id);
+    console.log(glasses);
+    glasses.update({
+        name: body.name,
+        id: body.id,
+        type: body.type,
+        sex: body.sex,
+        shape: body.shape,
+        colorOfGlass: body.colorOfGlass,
+        gradient: body.gradient,
+        lenstype: body.lenstype,
+        colorOfFrame: body.colorOfFrame,
+        material: body.material,
+        description: body.description
+    });
+    ctx.body = {
+        success: true
+    };
 };

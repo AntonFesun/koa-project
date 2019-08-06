@@ -5,7 +5,7 @@ const buy = document.getElementById('buy');
 renderGlasses();
 
 deleteCart.onclick = function (event) {
-    let wrapper = document.getElementsByClassName('wrapper')[0];
+    let wrapper = document.getElementsByClassName('brands')[0];
     wrapper.innerHTML = "";
     cart = [];
     window.localStorage.removeItem('cart');
