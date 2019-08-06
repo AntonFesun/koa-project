@@ -1,0 +1,21 @@
+include parts/header
+.content-container
+    ol.list
+        each order, index in orders
+            li.order
+                span(class="index-orde")=index + 1 + " - замовлення"
+                each glass in order.glasses
+                    .order-glasses
+                        img(src=glass.foto_1 class="item-photo")
+                        span(class="glasses-name")="Бренд: " + glass.name
+                        span(class="glasses-id")="ID: " + glass.id
+                        span(class="glasses-_id")="Унікальний ID: " + glass._id
+                        span(class="glasses-_id")="Ціна: UAH " + glass.price
+                        each q in order.quantity_item
+                            if glass.id === q.glasses_id
+                                p(class="glasses-quantity")
+                                    span(class="quantity-id")="Кількість одиниць: " + q.quantity
+                p(class="order-phone")="Телефон замовника: " + order.phone
+                p(class="order-address")="Адреса доставки: " + order.address
+                p(class="order-courier")="Кур'єр: " + order.courier
+script(src="/scripts/admin.js")

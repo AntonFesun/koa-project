@@ -1,8 +1,11 @@
 let doc = document;
-let saveButtonGlasses = doc.getElementById('save');
-saveButtonGlasses.onclick = function (event) {
-    event.preventDefault();
+let updateButtonGlasses = document.getElementById('update');
+
+updateButtonGlasses.onclick = function (event) {
+    console.log(event);
+    const id = event.srcElement.dataset.id;
     let object = {
+        mongoId: id,
         name: doc.getElementById('name').value,
         id: doc.getElementById('id').value,
         type: doc.getElementById('type').value,
@@ -16,20 +19,19 @@ saveButtonGlasses.onclick = function (event) {
         price: doc.getElementById('price').value,
         description: doc.getElementById('description').value,
         quantity: doc.getElementById('quantity').value,
-        foto_1: doc.getElementById('foto_1').files[0],
-        foto_2: doc.getElementById('foto_2').files[0],
-        foto_3: doc.getElementById('foto_3').files[0],
     };
-    let formD = toFormData(object);
-    saveNewGlasses(formD);
+    const editedGlass = toFormData(object);
+    return fetch(`/edit`, {
+        method: "put",
+        body: editedGlass
+    })
+        .then(response => {
+            console.log(response);
+        })
+        .catch(e => {
+            console.log(e);
+        })
 };
-
-let deleteButtons = doc.getElementsByClassName('delete');
-for(let i = 0; i < deleteButtons.length; i++) {
-    (function(){
-        deleteButtons[i].onclick = deleteGlass;
-    }());
-}
 
 function toFormData(dataObject) {
     let formData = new FormData();
@@ -49,36 +51,3 @@ function toFormData(dataObject) {
     }
     return formData;
 }
-
-function saveNewGlasses(newGlassObject) {
-    return fetch('glass', {
-        method: "post",
-        body: newGlassObject
-    })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(e => {
-            console.log(e);
-        })
-}
-
-function deleteGlass(event) {
-    const id = event.target.id;
-    console.log(id);
-    return fetch(`deleteGlass/${id}`, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-        },
-        method: "delete",
-        body: JSON.stringify({_id: id})
-    })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(e => {
-            console.log(e);
-        })
-}
-

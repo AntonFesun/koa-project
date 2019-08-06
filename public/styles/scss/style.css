@@ -29,35 +29,21 @@ header {
     header .navbar-link {
       color: #212121;
       text-decoration: none; }
-  header .container-buttons {
-    min-width: 200px;
+  header .cart {
+    color: #303437;
+    text-transform: uppercase;
+    background: none;
+    border: none;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
     flex-direction: row;
-    text-transform: uppercase; }
-    header .container-buttons .search {
-      width: 100%; }
-      header .container-buttons .search-text {
-        display: none; }
-      header .container-buttons .search-toggle {
-        background: none;
-        border: none; }
-    header .container-buttons .cart {
-      color: #303437;
-      text-transform: uppercase;
-      background: none;
-      border: none;
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-      align-items: center;
-      text-decoration: none; }
-      header .container-buttons .cart .text {
-        margin-left: 10px;
-        font-family: "Roboto";
-        font-size: 14px;
-        font-weight: 500; }
+    align-items: center;
+    text-decoration: none; }
+    header .cart .text {
+      margin-left: 10px;
+      font-family: "Roboto";
+      font-size: 14px;
+      font-weight: 500; }
 
 .container-header {
   max-width: 1300px;
@@ -221,14 +207,92 @@ header {
 .admin-send-form {
   display: flex;
   width: calc(100% - 30px);
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
   flex-wrap: wrap;
   margin: 10px; }
+  .admin-send-form .inputs {
+    display: flex;
+    flex-direction: column; }
+  .admin-send-form .checkbox {
+    width: 20px;
+    height: 20px; }
+  .admin-send-form .input-layer {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 2px solid white; }
+    .admin-send-form .input-layer label {
+      width: 100%;
+      height: 100%; }
+    .admin-send-form .input-layer:hover {
+      border-bottom: 2px solid #a77c5a; }
 
 .admin-inputs-db {
   max-width: 400px;
   margin-bottom: 10px;
   padding: 10px 10px; }
+
+.order {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  padding: 10px 5px; }
+  .order .glasses-quantity {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column; }
+  .order span {
+    margin-bottom: 10px; }
+  .order-phone, .order-address, .order-courier {
+    margin-left: 35px;
+    margin-bottom: 10px; }
+
+.order-glasses {
+  margin-left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.list {
+  margin-top: 20px; }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  max-width: 400px;
+  justify-content: center; }
+  .container > * {
+    margin-right: 10px; }
+
+input.cart-form-item {
+  padding: 10px 5px;
+  border: 1px solid #a77c5a; }
+
+button.cart-form-item {
+  border: 1px solid #a77c5a;
+  color: #a77c5a;
+  background: none;
+  padding: 10px 20px; }
+
+.cart-form-item {
+  margin-bottom: 20px; }
+
+.container-buttons {
+  min-width: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  text-transform: uppercase; }
+  .container-buttons .search {
+    width: 100%; }
+    .container-buttons .search-text {
+      display: none; }
+    .container-buttons .search-toggle {
+      background: none;
+      border: none; }
 
 /*# sourceMappingURL=style.css.map */
