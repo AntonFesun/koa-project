@@ -5,7 +5,7 @@ const buy = document.getElementById('buy');
 renderGlasses();
 
 deleteCart.onclick = function (event) {
-    let wrapper = document.getElementsByClassName('brands')[0];
+    let wrapper = document.getElementsByClassName('container')[0];
     wrapper.innerHTML = "";
     cart = [];
     window.localStorage.removeItem('cart');
@@ -71,7 +71,11 @@ function toFormData(dataObject) {
 function renderGlasses() {
     const glassesWrapper = document.getElementsByClassName('item-wrapper')[0];
     if (cart !== null) {
+        let summ = 0;
+        let summElement = document.getElementById('summ');
         cart.forEach((el) => {
+            summ =+ el.price * el.quantity;
+            summElement.innerText = summ + " UAH";
             let itemGlasses = document.createElement('a');
             let glassesName = document.createElement('span');
             let glassesId = document.createElement('span');
@@ -96,7 +100,9 @@ function renderGlasses() {
             itemGlasses.appendChild(glassesPrice);
             glassesWrapper.appendChild(itemGlasses);
         });
+    } else {
+        let emptyCart = document.getElementById('empty-cart');
+        emptyCart.innerHTML = "Ваш список замовлень пустий";
     }
-
 }
 

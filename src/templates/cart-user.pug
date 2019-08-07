@@ -1,10 +1,17 @@
 include parts/header
-.container
-    .item-wrapper
-.container-buttons
-    button(id='buy' class="cart-form-item") Купити
-    input(type="phone" id="phone" placeholder="Phone" class="cart-form-item")
-    input(type="text" id="address" placeholder="Address" class="cart-form-item")
-    input(type="text" id="courier" placeholder="Courier" class="cart-form-item")
-    button(id='delete-all' class="cart-form-item") Видалити всі
-    script(src='scripts/cart.js')
+h2.cart-header="Ваше Замовлення"
+.wrapper
+    .container-form
+        p.summ-order
+            span="Cума вашого замовлення:  "
+            span#summ.summ
+        button(id='buy' class="cart-form-item") Купити
+        input(type="phone" id="phone" placeholder="Phone" class="cart-form-item")
+        input(type="text" id="address" placeholder="Address" class="cart-form-item")
+        input(type="text" id="courier" placeholder="Courier" class="cart-form-item")
+        button(id='delete-all' class="cart-form-item") Видалити всі
+
+    .container
+        p#empty-cart
+        .item-wrapper
+script(src='scripts/cart.js')

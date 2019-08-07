@@ -60,6 +60,19 @@ header {
     }
   }
 
+.wrapper {
+  display: flex;
+}
+
+.cart-header {
+  text-align: center;
+  margin: 20px 0;
+  color: $link_color;
+  font-size: 24px;
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
 
 .container-header {
   max-width: 1300px;
@@ -221,37 +234,38 @@ header {
       }
     }
   }
+}
 
-  .item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 20px;
-    text-decoration: none;
 
-    &-photo {
-      width: 300px;
-      height: 300px;
-      margin-bottom: 10px;
-    }
-    &-name, &-id {
-      font-family: "Montserrat";
-      font-size: 18px;
-      color: $link_color2;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-    }
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 20px;
+  text-decoration: none;
 
-    &-price {
-      font-size: 30px;
-      color: #212121;
-      font-weight: 700;
-      margin-top: 20px;
-      font-family: "Montserrat";
-      letter-spacing: 1.4px;
-    }
+  &-photo {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+  &-name, &-id {
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: $link_color2;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+  }
+
+  &-price {
+    font-size: 30px;
+    color: #212121;
+    font-weight: 700;
+    margin-top: 20px;
+    font-family: "Montserrat";
+    letter-spacing: 1.4px;
   }
 }
 
@@ -340,8 +354,8 @@ header {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  max-width: 400px;
   justify-content: center;
+  flex-wrap: wrap;
 
   >* {
     margin-right: 10px;
@@ -366,6 +380,7 @@ button.cart-form-item {
 
 .container-buttons {
   min-width: 200px;
+  max-width: 300px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -384,4 +399,33 @@ button.cart-form-item {
       border: none;
     }
   }
+}
+
+.wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  margin-top: 30px;
+}
+
+.summ-order {
+  color: $link_color2;
+  font-family: 'Montserrat';
+  margin-bottom: 20px;
+}
+
+.summ {
+  font-size: 20px;
+}
+
+#empty-cart {
+  color: $link_color2;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  align-self: center;
 }
