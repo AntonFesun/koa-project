@@ -158,32 +158,58 @@ header {
     flex-direction: column;
     width: 300px;
     margin: 30px 20px; }
-    .brands .item-wrapper .add-to-cart {
-      position: relative;
-      display: block;
-      background: none;
-      border: none;
-      width: 20px;
-      height: 20px; }
-      .brands .item-wrapper .add-to-cart::after {
-        position: absolute;
-        content: "";
-        display: block;
-        height: 20px;
-        width: 3px;
-        background-color: #a77c5a;
-        top: 0;
-        left: 8px; }
-      .brands .item-wrapper .add-to-cart::before {
-        position: absolute;
-        content: "";
-        display: block;
-        height: 20px;
-        width: 3px;
-        background-color: #a77c5a;
-        transform: rotate(90deg);
-        top: 0;
-        left: 8px; }
+
+.add-to-cart, .increment {
+  position: relative;
+  display: block;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px; }
+  .add-to-cart::after, .increment::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 3px;
+    background-color: #a77c5a;
+    top: 0;
+    left: 8px; }
+  .add-to-cart::before, .increment::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 3px;
+    background-color: #a77c5a;
+    transform: rotate(90deg);
+    top: 0;
+    left: 8px; }
+
+.increment {
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.decrement {
+  align-self: end;
+  position: relative;
+  display: block;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px; }
+  .decrement::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 3px;
+    background-color: #a77c5a;
+    transform: rotate(90deg);
+    top: 0;
+    left: 8px; }
 
 .item {
   display: flex;
@@ -191,7 +217,8 @@ header {
   justify-content: center;
   align-items: center;
   margin: 30px 20px;
-  text-decoration: none; }
+  text-decoration: none;
+  position: relative; }
   .item-photo {
     width: 300px;
     height: 300px;

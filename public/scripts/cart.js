@@ -82,6 +82,13 @@ function renderGlasses() {
             let glassesPrice = document.createElement('span');
             let glassesImg_1 = document.createElement('img');
 
+            let decrementItem = document.createElement('button');
+            let incrementItem = document.createElement('button');
+            decrementItem.classList.add('decrement');
+            incrementItem.classList.add('increment');
+            decrementItem.dataset.id = el.id;
+            incrementItem.dataset.id = el.id;
+
             itemGlasses.classList.add('item');
             glassesImg_1.classList.add('item-photo');
             glassesName.classList.add('item-name');
@@ -94,11 +101,39 @@ function renderGlasses() {
 
             glassesImg_1.setAttribute('src', el.foto_1);
 
+            itemGlasses.setAttribute('id', el.id);
             itemGlasses.appendChild(glassesImg_1);
             itemGlasses.appendChild(glassesName);
             itemGlasses.appendChild(glassesId);
             itemGlasses.appendChild(glassesPrice);
+            itemGlasses.appendChild(decrementItem);
+            itemGlasses.appendChild(incrementItem);
             glassesWrapper.appendChild(itemGlasses);
+            decrementItem.onclick = function (event) {
+                cart.forEach((el, index) => {
+                   if (el.id === event.target.dataset.id && el.quantity >= 1) {
+                       --el.quantity;
+                       summ =+ el.price * el.quantity;
+                       summElement.innerText = summ + " UAH";
+                       if (el.quantity === 0) {
+                           cart.splice(index, 1);
+                           let deleteItem = document.getElementById(el.id);
+                           deleteItem.remove();
+                       }
+                   }
+                });
+                window.localStorage.setItem('cart', JSON.stringify(cart));
+            };
+            incrementItem.onclick = function (event) {
+                cart.forEach(el => {
+                   if (el.id === event.target.dataset.id) {
+                       ++el.quantity;
+                       summ =+ el.price * el.quantity;
+                       summElement.innerText = summ + " UAH";
+                   }
+                });
+                window.localStorage.setItem('cart', JSON.stringify(cart));
+            }
         });
     } else {
         let emptyCart = document.getElementById('empty-cart');

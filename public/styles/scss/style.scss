@@ -203,39 +203,67 @@ header {
     flex-direction: column;
     width: 300px;
     margin: 30px 20px;
-
-    .add-to-cart {
-      position: relative;
-      display: block;
-      background: none;
-      border: none;
-      width: 20px;
-      height: 20px;
-      &::after {
-        position: absolute;
-        content: "";
-        display: block;
-        height: 20px;
-        width: 3px;
-        background-color: #a77c5a;
-        top: 0;
-        left: 8px;
-      }
-      &::before {
-        position: absolute;
-        content: "";
-        display: block;
-        height: 20px;
-        width: 3px;
-        background-color: #a77c5a;
-        transform: rotate(90deg);
-        top: 0;
-        left: 8px;
-      }
-    }
   }
 }
 
+.add-to-cart {
+  position: relative;
+  display: block;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 3px;
+    background-color: #a77c5a;
+    top: 0;
+    left: 8px;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 3px;
+    background-color: #a77c5a;
+    transform: rotate(90deg);
+    top: 0;
+    left: 8px;
+  }
+}
+
+.increment {
+  @extend .add-to-cart;
+  align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.decrement {
+  align-self: end;
+  position: relative;
+  display: block;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20px;
+    width: 3px;
+    background-color: #a77c5a;
+    transform: rotate(90deg);
+    top: 0;
+    left: 8px;
+  }
+}
 
 .item {
   display: flex;
@@ -244,6 +272,7 @@ header {
   align-items: center;
   margin: 30px 20px;
   text-decoration: none;
+  position: relative;
 
   &-photo {
     width: 300px;
