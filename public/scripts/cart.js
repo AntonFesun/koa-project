@@ -11,7 +11,7 @@ deleteCart.onclick = function (event) {
     window.localStorage.removeItem('cart');
 };
 
-buy.onclick = function (event) {
+buy.onclick = function () {
     let cart = JSON.parse(window.localStorage.getItem('cart'));
     let glassesOrder = [];
     let order = {};
@@ -74,7 +74,7 @@ function renderGlasses() {
         let summ = 0;
         let summElement = document.getElementById('summ');
         cart.forEach((el) => {
-            summ =+ el.price * el.quantity;
+            summ += el.price * el.quantity;
             summElement.innerText = summ + " UAH";
             let itemGlasses = document.createElement('a');
             let glassesName = document.createElement('span');

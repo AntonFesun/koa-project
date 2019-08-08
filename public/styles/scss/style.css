@@ -38,12 +38,18 @@ header {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    text-decoration: none; }
+    text-decoration: none;
+    position: relative; }
     header .cart .text {
       margin-left: 10px;
       font-family: "Roboto";
       font-size: 14px;
       font-weight: 500; }
+    header .cart #counter {
+      position: absolute;
+      left: 6px;
+      top: 7px;
+      font-size: 13px; }
 
 .wrapper {
   display: flex; }
@@ -331,7 +337,7 @@ button.cart-form-item {
     width: 100%; }
     .container-buttons .search-text {
       display: none; }
-    .container-buttons .search-toggle {
+    .container-buttons .search #search-toggle {
       background: none;
       border: none; }
 

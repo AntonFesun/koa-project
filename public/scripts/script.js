@@ -2,12 +2,21 @@ const doc = document;
 const storage = window.localStorage;
 let toCartButtons = doc.querySelectorAll('[data-id]');
 let storageCart = [];
+storageCart = JSON.parse(storage.getItem('cart'));
 let quantity = 0;
-
+let counter = doc.getElementById('counter');
+counter.innerText = '0';
+let summOfGlasses = 0;
+storageCart.forEach(el => {
+    summOfGlasses += el.quantity;
+    console.log(summOfGlasses);
+});
+counter.innerText = summOfGlasses;
 
 function addToCart (event) {
     const dataAttribute = event.target.dataset;
-    storageCart = JSON.parse(storage.getItem('cart'));
+    ++summOfGlasses;
+    counter.innerText = summOfGlasses;
     if (storageCart !== null && storageCart.length > 0) {
         let flag = storageCart.find(el => el.id === event.target.dataset.id);
         if (flag === undefined) {

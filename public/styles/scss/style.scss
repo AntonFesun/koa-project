@@ -50,12 +50,20 @@ header {
       flex-direction: row;
       align-items: center;
       text-decoration: none;
+      position: relative;
 
       .text {
         margin-left: 10px;
         font-family: "Roboto";
         font-size: 14px;
         font-weight: 500;
+      }
+
+      #counter {
+        position: absolute;
+        left: 6px;
+        top: 7px;
+        font-size: 13px;
       }
     }
   }
@@ -423,7 +431,7 @@ button.cart-form-item {
       display: none;
     }
 
-    &-toggle {
+    #search-toggle {
       background: none;
       border: none;
     }
