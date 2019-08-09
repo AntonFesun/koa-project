@@ -2,11 +2,12 @@ const doc = document;
 const storage = window.localStorage;
 let toCartButtons = doc.querySelectorAll('[data-id]');
 let storageCart = [];
-storageCart = JSON.parse(storage.getItem('cart'));
 let quantity = 0;
-let counter = doc.getElementById('counter');
-counter.innerText = '0';
 let summOfGlasses = 0;
+let counter = doc.getElementById('counter');
+
+counter.innerText = '0';
+storageCart = JSON.parse(storage.getItem('cart'));
 storageCart.forEach(el => {
     summOfGlasses += el.quantity;
     console.log(summOfGlasses);

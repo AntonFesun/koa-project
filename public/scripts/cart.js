@@ -84,8 +84,10 @@ function renderGlasses() {
 
             let decrementItem = document.createElement('button');
             let incrementItem = document.createElement('button');
+
             decrementItem.classList.add('decrement');
             incrementItem.classList.add('increment');
+
             decrementItem.dataset.id = el.id;
             incrementItem.dataset.id = el.id;
 
@@ -106,8 +108,10 @@ function renderGlasses() {
             itemGlasses.appendChild(glassesName);
             itemGlasses.appendChild(glassesId);
             itemGlasses.appendChild(glassesPrice);
+
             itemGlasses.appendChild(decrementItem);
             itemGlasses.appendChild(incrementItem);
+
             glassesWrapper.appendChild(itemGlasses);
             decrementItem.onclick = function (event) {
                 cart.forEach((el, index) => {

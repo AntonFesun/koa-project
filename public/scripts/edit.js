@@ -2,7 +2,7 @@ let doc = document;
 let updateButtonGlasses = document.getElementById('update');
 
 updateButtonGlasses.onclick = function (event) {
-    console.log(event);
+    event.preventDefault();
     const id = event.srcElement.dataset.id;
     let object = {
         mongoId: id,

@@ -169,6 +169,7 @@ exports.deleteGlass = async (ctx) => {
 
 exports.editGlass = async (ctx) => {
     const glasses = await Glasses.findById(ctx.params.glassesId);
+    console.log(glasses);
     await ctx.render('edit_glasses.pug', {
         glasses
   })
@@ -177,22 +178,28 @@ exports.editGlass = async (ctx) => {
 exports.update = async (ctx) => {
     const body = ctx.request.body;
     const id = body.mongoId;
-    console.log(id);
-    const glasses = await Glasses.findById(id);
-    console.log(glasses);
-    glasses.update({
-        name: body.name,
-        id: body.id,
-        type: body.type,
-        sex: body.sex,
-        shape: body.shape,
-        colorOfGlass: body.colorOfGlass,
-        gradient: body.gradient,
-        lenstype: body.lenstype,
-        colorOfFrame: body.colorOfFrame,
-        material: body.material,
-        description: body.description
+    Glasses.findByIdAndUpdate({_id: id}, {
+        $set:{
+            name: body.name,
+            id: body.id,
+            type: body.type,
+            sex: body.sex,
+            shape: body.shape,
+            colorOfGlass: body.colorOfGlass,
+            gradient: body.gradient,
+            lenstype: body.lenstype,
+            colorOfFrame: body.colorOfFrame,
+            material: body.material,
+            price: body.price,
+            description: body.description
+    }}, {new: true}, (error, glasses) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log(glasses);
+        }
     });
+
     ctx.body = {
         success: true
     };

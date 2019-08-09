@@ -18,10 +18,10 @@ form(class="admin-send-form")
             option(value="жіночі") Жіночі
         .input-layer
             label(for="lenstype") Поляризація
-            input( class='admin-inputs-db checkbox' id="lenstype" type="checkbox" placeholder="Polarizing of lenses" required)
+            input( class='admin-inputs-db checkbox' id="lenstype" type="checkbox" placeholder="Polarizing of lenses" checked=glasses.lenstype)
         .input-layer
             label(for="gradient") Градієнт
-            input( class='admin-inputs-db checkbox' id="gradient" type="checkbox" placeholder="Gradient" required)
+            input( class='admin-inputs-db checkbox' id="gradient" type="checkbox" placeholder="Gradient" checked=glasses.gradient)
         textarea( class='admin-inputs-db' id="description" placeholder="Description" rows=10 required)= glasses.description
         button( class='admin-inputs-db' type="submit" id="update" data-id=glasses._id) Оновити
 script(src="/scripts/edit.js")
