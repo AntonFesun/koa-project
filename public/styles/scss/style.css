@@ -1,3 +1,8 @@
+@keyframes search {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
 * {
   margin: 0;
   padding: 0; }
@@ -39,7 +44,8 @@ header {
     flex-direction: row;
     align-items: center;
     text-decoration: none;
-    position: relative; }
+    position: relative;
+    margin-left: 10px; }
     header .cart .text {
       margin-left: 10px;
       font-family: "Roboto";
@@ -334,12 +340,19 @@ button.cart-form-item {
   flex-direction: row;
   text-transform: uppercase; }
   .container-buttons .search {
-    width: 100%; }
+    width: 200px;
+    display: flex;
+    flex-direction: row; }
     .container-buttons .search-text {
-      display: none; }
+      width: calc(100% - 50px);
+      line-height: 30px;
+      border: 0;
+      padding-left: 10px; }
     .container-buttons .search #search-toggle {
       background: none;
-      border: none; }
+      border: none;
+      vertical-align: middle;
+      margin-left: 10px; }
 
 .wrapper {
   max-width: 1300px;

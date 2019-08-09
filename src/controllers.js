@@ -140,7 +140,6 @@ exports.singleGlasses = async (ctx) => {
     await ctx.render('glass.pug', {
         glass
     });
-
 };
 
 exports.brands = async (ctx) => {
@@ -172,7 +171,22 @@ exports.editGlass = async (ctx) => {
     console.log(glasses);
     await ctx.render('edit_glasses.pug', {
         glasses
-  })
+    })
+};
+
+let searchGlasses;
+
+exports.search = async (ctx) => {
+    const query = ctx.request.body.request;
+    searchGlasses = await Glasses.find({name: {$regex: query, $options: 'i'}});
+    ctx.status = 308;
+    await ctx.redirect('search');
+};
+
+exports.searchPage = async (ctx) => {
+    await ctx.render('search.pug', {
+        searchGlasses
+    });
 };
 
 exports.update = async (ctx) => {
@@ -199,7 +213,6 @@ exports.update = async (ctx) => {
             console.log(glasses);
         }
     });
-
     ctx.body = {
         success: true
     };

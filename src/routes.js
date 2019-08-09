@@ -32,6 +32,8 @@ router.get('editGlass/:glassesId', ctrl.editGlass);
 
 router.post('glass', validator.downloadValidator, ctrl.save);
 router.post('order', ctrl.makeOrder);
+router.post('find', ctrl.search);
+router.get('search', ctrl.searchPage);
 
 router.delete('deleteGlass/:glassesId', ctrl.deleteGlass);
 router.put('edit', ctrl.update);

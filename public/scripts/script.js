@@ -5,14 +5,42 @@ let storageCart = [];
 let quantity = 0;
 let summOfGlasses = 0;
 let counter = doc.getElementById('counter');
+const searchToggle = doc.getElementById('search-toggle');
+const searchInput = doc.getElementById('search-input');
+searchToggle.onclick = function (event) {
+    event.preventDefault();
+    const searchRequest = {request: searchInput.value};
+    fetch('find', {
+        method: "post",
+        body: JSON.stringify(searchRequest),
+        headers:{
+            'Accept':'text/html',
+            'Content-Type': 'application/json'
+        }
+    }).then(resp => {
+        fetch('search')
+            .then(resp => {
+                console.log(resp);
+                location.replace(resp.url);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }).catch(err => {
+        console.log(err);
+    })
+};
 
 counter.innerText = '0';
 storageCart = JSON.parse(storage.getItem('cart'));
-storageCart.forEach(el => {
-    summOfGlasses += el.quantity;
-    console.log(summOfGlasses);
-});
-counter.innerText = summOfGlasses;
+if (storageCart !== null) {
+    storageCart.forEach(el => {
+        summOfGlasses += el.quantity;
+        console.log(summOfGlasses);
+    });
+    counter.innerText = summOfGlasses;
+}
+
 
 function addToCart (event) {
     const dataAttribute = event.target.dataset;

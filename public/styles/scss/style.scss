@@ -1,4 +1,7 @@
 @import "var";
+@import "animation";
+
+
 * {
   margin: 0;
   padding: 0;
@@ -51,6 +54,7 @@ header {
       align-items: center;
       text-decoration: none;
       position: relative;
+      margin-left: 10px;
 
       .text {
         margin-left: 10px;
@@ -136,6 +140,7 @@ header {
   padding-top: 50px;
   width: calc(100% - 100px);
   margin: 0 auto;
+
   &-container {
     max-width: 1300px;
     margin: 0 auto;
@@ -148,6 +153,7 @@ header {
       padding-top: 70px;
       max-width: 1300px;
       margin: 0 auto;
+
       h2 {
         font-family: "Montserrat";
         font-size: 35px;
@@ -425,15 +431,22 @@ button.cart-form-item {
   text-transform: uppercase;
 
   .search {
-    width: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
 
     &-text {
-      display: none;
+      width: calc(100% - 50px);
+      line-height: 30px;
+      border: 0;
+      padding-left: 10px;
     }
 
     #search-toggle {
       background: none;
       border: none;
+      vertical-align: middle;
+      margin-left: 10px;
     }
   }
 }
