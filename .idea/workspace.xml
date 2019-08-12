@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a08f867-167d-4e7e-a0a3-541d7fdf76ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/styles/scss/_animation.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/search.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/scss/.sass-cache/c58f8a557869754dbd7f9daba451447eef8f6986/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/c58f8a557869754dbd7f9daba451447eef8f6986/style.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/parts/header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/parts/header.pug" afterDir="false" />
-    </list>
+    <list default="true" id="9a08f867-167d-4e7e-a0a3-541d7fdf76ae" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +89,7 @@
       <workItem from="1565089856328" duration="7395000" />
       <workItem from="1565161990455" duration="7525000" />
       <workItem from="1565247860207" duration="13645000" />
-      <workItem from="1565332830803" duration="24823000" />
+      <workItem from="1565332830803" duration="24994000" />
     </task>
     <servers />
   </component>
