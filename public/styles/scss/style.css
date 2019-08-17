@@ -76,7 +76,6 @@ header {
 
 .content {
   background-color: #f2ebe6;
-  padding-top: 180px;
   padding-bottom: 300px; }
   .content-container {
     max-width: 1300px;
@@ -102,7 +101,7 @@ header {
       .content-container-gender-links-link {
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: 15px;
         letter-spacing: 1.8px;
         color: #a77c5a; }
 

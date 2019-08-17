@@ -217,3 +217,9 @@ exports.update = async (ctx) => {
         success: true
     };
 };
+
+exports.signIn = async (ctx) => {
+    ctx.body = {
+        success: true
+    }
+};

@@ -4,7 +4,7 @@ const validator = require('./validator');
 
 const router = new Router();
 
-router.get('fesunAdmin', ctrl.adminPage);
+router.get('adminPanel', ctrl.adminPage);
 router.get('orders', ctrl.orders);
 
 router.get('', ctrl.homePage);
@@ -27,7 +27,6 @@ router.get('brands/:brands', ctrl.brands);
 
 router.get('cart', ctrl.cartUser);
 
-
 router.get('editGlass/:glassesId', ctrl.editGlass);
 
 router.post('glass', validator.downloadValidator, ctrl.save);
@@ -39,4 +38,3 @@ router.delete('deleteGlass/:glassesId', ctrl.deleteGlass);
 router.put('edit', ctrl.update);
 
 module.exports = router;
-
