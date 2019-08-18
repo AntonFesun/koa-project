@@ -1,10 +1,14 @@
 const Router = require('koa-router');
+const passport = require('koa-passport');
 const ctrl = require('./controllers');
 const validator = require('./validator');
 
 const router = new Router();
 
-router.get('adminPanel', ctrl.adminPage);
+router.post('sign-in', ctrl.signIn);
+router.get('sign-up', ctrl.signUp);
+
+router.get('adminPanel', passport.authenticate('jwt', {session: false}), ctrl.adminPage);
 router.get('orders', ctrl.orders);
 
 router.get('', ctrl.homePage);

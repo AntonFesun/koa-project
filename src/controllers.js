@@ -1,9 +1,15 @@
 const Glasses = require('./models/glasses');
 const Order = require('./models/cart');
+const Admin = require('./models/admin');
 const fs = require('fs');
 const SMS = require('sms_ru');
 const sms_id = '992125F5-1FEC-5A10-002A-98230CE716E6 ';
 const sms = new SMS(sms_id);
+const config = require('config');
+const passport = require('koa-passport');
+const jwt = require('jwt-simple');
+
+
 
 exports.homePage = async (ctx) => {
     const brands = await Glasses.distinct("name");
@@ -55,6 +61,8 @@ exports.womenPageRims = async (ctx) => {
 };
 
 exports.adminPage = async (ctx) => {
+    console.log(ctx);
+
     const glasses = await Glasses.find({});
     await ctx.render('admin-panel.pug', {
         glasses
@@ -218,7 +226,30 @@ exports.update = async (ctx) => {
     };
 };
 
-exports.signIn = async (ctx) => {
+exports.signIn = async (ctx, next) => {
+    await passport.authenticate('local', (err, user) => {
+        if (user) {
+            let payload = {
+                id: user._id
+            };
+            ctx.body = {
+                token: jwt.encode(payload, config.get('jwtSecret')),
+                success: true
+            }
+        } else {
+            ctx.body = {
+                error: true
+            }
+        }
+    })(ctx, next);
+};
+
+exports.signUp = async (ctx) => {
+    const admin = new Admin({
+        login: 'anton',
+        password: 'qwerty111'
+    });
+    await admin.save();
     ctx.body = {
         success: true
     }

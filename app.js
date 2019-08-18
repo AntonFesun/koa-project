@@ -6,6 +6,7 @@ const serve = require('koa-static');
 const bodyParser = require('koa-body');
 const config = require('config');
 const fs = require('fs');
+const passport = require('./src/libs/passport/index');
 const mongoose = require('mongoose');
 const beautifulUnique = require('mongoose-beautiful-unique-validation');
 
@@ -18,7 +19,7 @@ mongoose.plugin(beautifulUnique);
 
 const app = new Koa();
 const router = new Router();
-
+app.use(passport.initialize());
 app.use(bodyParser({
     formidable:{
         uploadDir: path.join( __dirname, '/public/assets/db_images'),
