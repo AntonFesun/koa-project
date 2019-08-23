@@ -9,8 +9,6 @@ const config = require('config');
 const passport = require('koa-passport');
 const jwt = require('jwt-simple');
 
-
-
 exports.homePage = async (ctx) => {
     const brands = await Glasses.distinct("name");
     await ctx.render('index.pug', {brands});
@@ -62,7 +60,6 @@ exports.womenPageRims = async (ctx) => {
 
 exports.adminPage = async (ctx) => {
     console.log(ctx);
-
     const glasses = await Glasses.find({});
     await ctx.render('admin-panel.pug', {
         glasses
@@ -121,6 +118,7 @@ exports.save = async(ctx) => {
 
 exports.makeOrder = async (ctx) => {
   const body = ctx.request.body;
+  console.log(body);
   let glasses = JSON.parse(body.glasses);
   const order = new Order({
       glasses: glasses,
@@ -226,6 +224,14 @@ exports.update = async (ctx) => {
     };
 };
 
+exports.signUpPage = async (ctx) => {
+    await ctx.render('signup.pug');
+};
+
+exports.signInPage = async (ctx) => {
+    await ctx.render('signin.pug');
+};
+
 exports.signIn = async (ctx, next) => {
     await passport.authenticate('local', (err, user) => {
         if (user) {
@@ -245,9 +251,11 @@ exports.signIn = async (ctx, next) => {
 };
 
 exports.signUp = async (ctx) => {
+    const body = ctx.request.body;
+    console.log(body);
     const admin = new Admin({
-        login: 'anton',
-        password: 'qwerty111'
+        login: body.login,
+        password: body.password
     });
     await admin.save();
     ctx.body = {

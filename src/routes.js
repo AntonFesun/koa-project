@@ -5,8 +5,11 @@ const validator = require('./validator');
 
 const router = new Router();
 
-router.post('sign-in', ctrl.signIn);
-router.get('sign-up', ctrl.signUp);
+router.get('signUpPage', ctrl.signUpPage);
+router.get('signInPage', ctrl.signInPage);
+
+router.post('signin', ctrl.signIn);
+router.post('signup', ctrl.signUp);
 
 router.get('adminPanel', passport.authenticate('jwt', {session: false}), ctrl.adminPage);
 router.get('orders', ctrl.orders);
