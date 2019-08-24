@@ -1,0 +1,48 @@
+.single_glasses_container {
+  display: flex;
+  max-width: 1300px;
+  margin: 50px auto;
+  font-family: "Montserrat";
+  justify-content: space-around;
+
+  .photos {
+    display: flex;
+    flex-direction: column;
+
+    .main_image {
+      border: 1px solid $link_color2;
+      margin: 20px;
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-height: 400px;
+    color: $text_color;
+    font-size: 15px;
+    letter-spacing: 1.1px;
+    font-weight: 600;
+
+    .add-to-cart {
+      margin-top: 20px;
+      align-self: center;
+    }
+  }
+}
+
+.price {
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  color: $link_color2;
+  font-weight: 900;
+}
+
+.main_image {
+  width: 500px;
+}
+
+.secondary_image {
+  width: 200px;
+}

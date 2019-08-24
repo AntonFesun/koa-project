@@ -1,11 +1,12 @@
 let cart = JSON.parse(window.localStorage.getItem('cart'));
 const deleteCart = document.getElementById('delete-all');
 const buy = document.getElementById('buy');
+const wrapper = document.getElementsByClassName('container')[0];
+let emptyFields = document.getElementById('empty-fields');
 
 renderGlasses();
 
 deleteCart.onclick = function (event) {
-    let wrapper = document.getElementsByClassName('container')[0];
     wrapper.innerHTML = "";
     cart = [];
     window.localStorage.removeItem('cart');
@@ -19,21 +20,30 @@ buy.onclick = function () {
     let phone = document.getElementById('phone').value;
     let address = document.getElementById('address').value;
     let courier = document.getElementById('courier').value;
-    cart.forEach((el) => {
-        glassesOrder.push({_id: el.id});
-    });
-    order.glasses = glassesOrder;
-    cart.forEach(el => {
-        order.quantity_item.push({glasses_id: el.identifier, quantity: el.quantity});
-    });
-    order.glasseQuantity = [{
 
-    }];
-    order.phone = phone;
-    order.address = address;
-    order.courier = courier;
-    let data = toFormData(order);
-    makeOrder(data);
+    if (phone !== "" || address !== "" || courier !== "") {
+        cart.forEach((el) => {
+            glassesOrder.push({_id: el.id});
+        });
+        order.glasses = glassesOrder;
+        cart.forEach(el => {
+            order.quantity_item.push({glasses_id: el.identifier, quantity: el.quantity});
+        });
+        order.glasseQuantity = [{
+
+        }];
+        order.phone = phone;
+        order.address = address;
+        order.courier = courier;
+        let data = toFormData(order);
+        makeOrder(data);
+        cart = [];
+        window.localStorage.removeItem('cart');
+        emptyFields.innerHTML = "Ваше замовлення в обробці, дякуємо за покупку!";
+        wrapper.innerHTML = '';
+    } else {
+        emptyFields.innerHTML = "Будь ласка, заповніть поля 'Телефон', 'Адреса', 'Кур'єр'!";
+    }
 };
 
 function makeOrder(orderObject) {

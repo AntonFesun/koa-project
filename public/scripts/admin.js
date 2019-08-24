@@ -53,7 +53,10 @@ function toFormData(dataObject) {
 function saveNewGlasses(newGlassObject) {
     return fetch('glass', {
         method: "post",
-        body: newGlassObject
+        body: newGlassObject,
+        headers: {
+            'Authorization': 'JWT ' + window.localStorage.getItem('token')
+        }
     })
         .then(response => {
             console.log(response);
@@ -70,6 +73,7 @@ function deleteGlass(event) {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
+            'Authorization': 'JWT ' + window.localStorage.getItem('token')
         },
         method: "delete",
         body: JSON.stringify({_id: id})

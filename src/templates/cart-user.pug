@@ -1,6 +1,10 @@
 include parts/header
 h2.cart-header="Ваше Замовлення"
 .wrapper
+    .cart-items
+        p#empty-cart
+        p#empty-fields
+.wrapper
     .container-form
         p.summ-order
             span="Cума вашого замовлення:  "
@@ -10,8 +14,6 @@ h2.cart-header="Ваше Замовлення"
         input(type="text" id="address" placeholder="Address" class="cart-form-item")
         input(type="text" id="courier" placeholder="Courier" class="cart-form-item")
         button(id='delete-all' class="cart-form-item") Видалити всі
-
     .container
-        p#empty-cart
         .item-wrapper
 script(src='scripts/cart.js')

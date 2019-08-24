@@ -36,12 +36,12 @@ router.get('cart', ctrl.cartUser);
 
 router.get('editGlass/:glassesId', ctrl.editGlass);
 
-router.post('glass', validator.downloadValidator, ctrl.save);
+router.post('glass', passport.authenticate('jwt', {session: false}), validator.downloadValidator, ctrl.save);
 router.post('order', ctrl.makeOrder);
 router.post('find', ctrl.search);
 router.get('search', ctrl.searchPage);
 
-router.delete('deleteGlass/:glassesId', ctrl.deleteGlass);
-router.put('edit', ctrl.update);
+router.delete('deleteGlass/:glassesId', passport.authenticate('jwt', {session: false}), ctrl.deleteGlass);
+router.put('edit', passport.authenticate('jwt', {session: false}), ctrl.update);
 
 module.exports = router;

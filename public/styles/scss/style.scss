@@ -1,5 +1,6 @@
 @import "var";
 @import "animation";
+@import "single-glasses";
 
 
 * {
@@ -477,4 +478,11 @@ button.cart-form-item {
   font-family: 'Montserrat';
   font-size: 20px;
   align-self: center;
+}
+
+#empty-fields {
+  color: $link_color2;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  align-self: flex-end;
 }

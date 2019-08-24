@@ -1,22 +1,24 @@
-let signin = document.getElementById('signin');
+let signin = document.getElementById('signin-form');
 
-signin.onclick = function (e) {
-  e.preventDefault();
+signin.onsubmit = function (e) {
+  // e.preventDefault();
   const login = document.getElementById('login').value;
   const password = document.getElementById('password').value;
   const data = new FormData;
   data.append("login", login);
   data.append("password", password);
-  console.log(data);
-  fetch('signin', {
+  return fetch('signin', {
     method: 'post',
     body: data
   })
     .then(response => {
-      console.log(response);
-      window.localStorage.setItem('token', response.token);
+      return response.json();
     })
-    .catch(e => {
-      console.log(e);
+    .then(data => {
+      console.log(data);
+      window.localStorage.setItem('token', data.token);
+    })
+    .catch(error => {
+      console.log(error);
     })
 };

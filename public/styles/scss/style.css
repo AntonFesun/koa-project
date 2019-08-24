@@ -3,6 +3,43 @@
     width: 0; }
   to {
     width: 100%; } }
+.single_glasses_container {
+  display: flex;
+  max-width: 1300px;
+  margin: 50px auto;
+  font-family: "Montserrat";
+  justify-content: space-around; }
+  .single_glasses_container .photos {
+    display: flex;
+    flex-direction: column; }
+    .single_glasses_container .photos .main_image {
+      border: 1px solid #a77c5a;
+      margin: 20px; }
+  .single_glasses_container .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-height: 400px;
+    color: #303437;
+    font-size: 15px;
+    letter-spacing: 1.1px;
+    font-weight: 600; }
+    .single_glasses_container .details .add-to-cart, .single_glasses_container .details .increment {
+      margin-top: 20px;
+      align-self: center; }
+
+.price {
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  color: #a77c5a;
+  font-weight: 900; }
+
+.main_image {
+  width: 500px; }
+
+.secondary_image {
+  width: 200px; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -376,5 +413,11 @@ button.cart-form-item {
   font-family: 'Montserrat';
   font-size: 20px;
   align-self: center; }
+
+#empty-fields {
+  color: #a77c5a;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  align-self: flex-end; }
 
 /*# sourceMappingURL=style.css.map */

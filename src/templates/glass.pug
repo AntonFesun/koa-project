@@ -1,9 +1,36 @@
 include parts/header
-.wrapper
-    img(src=glass.foto_1 width="150px")
-    img(src=glass.foto_2 width="150px")
-    img(src=glass.foto_3 width="150px")
-    span=glass.name
-    span=glass.id
-    p=glass.description
-
+.single_glasses_container
+    .photos
+        img(src=glass.foto_1 class="image_glasses main_image")
+        img(src=glass.foto_2 class="image_glasses main_image")
+        img(src=glass.foto_3 class="image_glasses main_image")
+    .details
+        span= "Назва: " + glass.name
+        span=glass.sex
+        span= "ID: " + glass.id
+        span="Форма: " + glass.shape
+        span="Колір лінз: " + glass.colorOfGlass
+        span="Колір оправи: " + glass.colorOfFrame
+        span="Градієнт: " + glass.gradient
+        span="Поляризація: " + glass.lenstype
+        span="Матеріал: " + glass.material
+        p=glass.description
+        span(class="price")="Ціна: " + glass.price + " UAH"
+        button( class="add-to-cart"
+            data-name=glass.name
+            data-id=glass._id
+            data-glassesidentificator=glass.id
+            data-type=glass.type
+            data-sex=glass.sex
+            data-shape=glass.shape
+            data-colorg=glass.colorOfGlass
+            data-gradient=glass.gradient
+            data-lenstype=glass.lenstype
+            data-colorf=glass.colorOfFrame
+            data-material=glass.material
+            data-price=glass.price
+            data-description=glass.description
+            data-foto_1=glass.foto_1
+            data-foto_2=glass.foto_2
+            data-foto_3=glass.foto_3)
+script(src='/scripts/script.js')

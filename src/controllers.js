@@ -58,14 +58,6 @@ exports.womenPageRims = async (ctx) => {
     await ctx.render('women_rims.pug', {glasses});
 };
 
-exports.adminPage = async (ctx) => {
-    console.log(ctx);
-    const glasses = await Glasses.find({});
-    await ctx.render('admin-panel.pug', {
-        glasses
-    });
-};
-
 exports.orders = async (ctx) => {
     const orders = await Order.find({}).populate('glasses');
     console.log(orders);
@@ -143,6 +135,7 @@ exports.makeOrder = async (ctx) => {
 exports.singleGlasses = async (ctx) => {
     const id = ctx.params.glassesId ;
     const glass = await Glasses.findById(id);
+    console.log(glass);
     await ctx.render('glass.pug', {
         glass
     });
@@ -233,11 +226,15 @@ exports.signInPage = async (ctx) => {
 };
 
 exports.signIn = async (ctx, next) => {
+    const glasses = await Glasses.find({});
     await passport.authenticate('local', (err, user) => {
         if (user) {
             let payload = {
                 id: user._id
             };
+            ctx.render('admin-panel.pug', {
+                glasses
+            });
             ctx.body = {
                 token: jwt.encode(payload, config.get('jwtSecret')),
                 success: true
@@ -248,11 +245,13 @@ exports.signIn = async (ctx, next) => {
             }
         }
     })(ctx, next);
+    await ctx.render('admin-panel.pug', {
+        glasses
+    });
 };
 
 exports.signUp = async (ctx) => {
     const body = ctx.request.body;
-    console.log(body);
     const admin = new Admin({
         login: body.login,
         password: body.password
@@ -261,4 +260,11 @@ exports.signUp = async (ctx) => {
     ctx.body = {
         success: true
     }
+};
+
+exports.adminPage = async (ctx) => {
+  const glasses = await Glasses.find({});
+  await ctx.render('admin-panel.pug', {
+    glasses
+  });
 };

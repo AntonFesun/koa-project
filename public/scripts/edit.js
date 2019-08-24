@@ -23,7 +23,10 @@ updateButtonGlasses.onclick = function (event) {
     const editedGlass = toFormData(object);
     return fetch(`/edit`, {
         method: "put",
-        body: editedGlass
+        body: editedGlass,
+        headers: {
+            'Authorization': 'JWT ' + window.localStorage.getItem('token')
+        }
     })
         .then(response => {
             console.log(response);
