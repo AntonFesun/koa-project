@@ -9,6 +9,7 @@ const fs = require('fs');
 const passport = require('./src/libs/passport/index');
 const mongoose = require('mongoose');
 const beautifulUnique = require('mongoose-beautiful-unique-validation');
+const locale = require('koa-locale');
 
 mongoose.connect(config.get('databaseUrl'), {
     useNewUrlParser: true,
@@ -19,6 +20,12 @@ mongoose.plugin(beautifulUnique);
 
 const app = new Koa();
 const router = new Router();
+
+const options = {
+  dirs: [__dirname + '/locales', __dirname + '/foo/locales'],
+};
+
+locale(app, options);
 
 app.use(passport.initialize());
 

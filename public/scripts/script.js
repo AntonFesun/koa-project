@@ -36,11 +36,25 @@ storageCart = JSON.parse(storage.getItem('cart'));
 if (storageCart !== null) {
     storageCart.forEach(el => {
         summOfGlasses += el.quantity;
-        console.log(summOfGlasses);
     });
     counter.innerText = summOfGlasses;
 }
 
+function showWhichElementInCart (store) {
+  let inCart = document.getElementsByClassName('added-to-cart');
+  if (store !== null && store.length !== 0) {
+    for (let i = 0; i < inCart.length; i++) {
+      for(let j = 0; j < store.length; j++) {
+        if(inCart[i].dataset.visibility === store[j].id) {
+          console.log(inCart[i]);
+          inCart[i].style.display = 'block';
+        }
+      }
+    }
+  }
+}
+
+showWhichElementInCart(storageCart);
 
 function addToCart (event) {
     const dataAttribute = event.target.dataset;
@@ -68,7 +82,9 @@ function addToCart (event) {
                 foto_3: dataAttribute.foto_3
             };
             storageCart.push(newGlasses);
+            console.log(storageCart);
             storage.setItem('cart', JSON.stringify(storageCart));
+            showWhichElementInCart(storageCart);
         } else {
             storageCart.forEach((el) => {
                 if (el.id === event.target.dataset.id) {
@@ -76,6 +92,7 @@ function addToCart (event) {
                 }
             });
             storage.setItem('cart', JSON.stringify(storageCart));
+            showWhichElementInCart(storageCart);
         }
     } else {
         storageCart = [];
@@ -99,6 +116,7 @@ function addToCart (event) {
         };
         storageCart.push(newGlasses);
         storage.setItem('cart', JSON.stringify(storageCart));
+        showWhichElementInCart(storageCart);
     }
 }
 

@@ -1,6 +1,7 @@
 .item-wrapper
     a.item(href="/glasses/"+glass._id)
         img(src=glass.foto_1 class="item-photo")
+        p.added-to-cart(data-visibility=glass._id) В корзині
         span(class="item-name")=glass.name
         span(class="item-id")=glass.id
         span(class="item-price")=glass.price + " UAH"

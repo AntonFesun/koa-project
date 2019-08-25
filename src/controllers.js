@@ -124,7 +124,7 @@ exports.makeOrder = async (ctx) => {
       text: 'Магазин: У вас нове замовлення!',
       from: 'ZaGlaza'
   }, (e) => {
-      console.log(e.description);
+      console.log(e.description + "Something wrong");
   });
   await order.save();
   ctx.body = {
@@ -251,14 +251,21 @@ exports.signIn = async (ctx, next) => {
 };
 
 exports.signUp = async (ctx) => {
-    const body = ctx.request.body;
-    const admin = new Admin({
-        login: body.login,
-        password: body.password
-    });
-    await admin.save();
-    ctx.body = {
-        success: true
+    const allAdmins = await Admin.find({});
+    if (allAdmins.length === 0) {
+        const body = ctx.request.body;
+        const admin = new Admin({
+            login: body.login,
+            password: body.password
+        });
+        await admin.save();
+        ctx.body = {
+            success: true
+        }
+    } else {
+        ctx.body = {
+            success: 'fuck you'
+        }
     }
 };
 

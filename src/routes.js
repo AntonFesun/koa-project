@@ -12,7 +12,7 @@ router.post('signin', ctrl.signIn);
 router.post('signup', ctrl.signUp);
 
 router.get('adminPanel', passport.authenticate('jwt', {session: false}), ctrl.adminPage);
-router.get('orders', ctrl.orders);
+router.get('orders', passport.authenticate('jwt', {session: false}), ctrl.orders);
 
 router.get('', ctrl.homePage);
 router.get('all', ctrl.all);

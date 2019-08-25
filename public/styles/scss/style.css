@@ -420,4 +420,12 @@ button.cart-form-item {
   font-size: 20px;
   align-self: flex-end; }
 
+.added-to-cart {
+  display: none;
+  color: #a77c5a;
+  font-family: 'Montserrat';
+  font-size: 40px;
+  position: absolute;
+  font-weight: bold; }
+
 /*# sourceMappingURL=style.css.map */

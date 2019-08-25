@@ -2,22 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a08f867-167d-4e7e-a0a3-541d7fdf76ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/styles/scss/_single-glasses.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_50ef205e561a8df2df5a37579e5d7f92.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_77b31d72c085b402e108f0e02a91b621.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_86b045903297bf699c4e3c4c9e4930e4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_d080e8afd1b5a1e9e7e27cbfe8fc27ab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_d1568475555ed3535eedc2e2d3ac0bcd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_f5065da1a9b870d38eee9086db740d17.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/signin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/scss/.sass-cache/c58f8a557869754dbd7f9daba451447eef8f6986/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/c58f8a557869754dbd7f9daba451447eef8f6986/style.scssc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/cart-user.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/cart-user.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/glass.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/glass.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/parts/header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/parts/header.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/signin.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/signin.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/parts/glasses-list.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/parts/glasses-list.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +41,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ORqYz4TQgRonCB28B97whRCJpe" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -119,7 +125,8 @@
       <workItem from="1565247860207" duration="13645000" />
       <workItem from="1565332830803" duration="24994000" />
       <workItem from="1566118438502" duration="29516000" />
-      <workItem from="1566638089231" duration="15598000" />
+      <workItem from="1566638089231" duration="19265000" />
+      <workItem from="1566725605953" duration="7549000" />
     </task>
     <servers />
   </component>
@@ -147,5 +154,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

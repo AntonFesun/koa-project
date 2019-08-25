@@ -486,3 +486,12 @@ button.cart-form-item {
   font-size: 20px;
   align-self: flex-end;
 }
+
+.added-to-cart {
+  display: none;
+  color: $link_color2;
+  font-family: 'Montserrat';
+  font-size: 40px;
+  position: absolute;
+  font-weight: bold;
+}
