@@ -1,7 +1,7 @@
 let signin = document.getElementById('signin-form');
 
 signin.onsubmit = function (e) {
-  // e.preventDefault();
+  e.preventDefault();
   const login = document.getElementById('login').value;
   const password = document.getElementById('password').value;
   const data = new FormData;
@@ -14,9 +14,9 @@ signin.onsubmit = function (e) {
     .then(response => {
       return response.json();
     })
-    .then(data => {
-      console.log(data);
-      window.localStorage.setItem('token', data.token);
+    .then(obj => {
+      console.log(obj);
+      window.localStorage.setItem('token', obj.token);
     })
     .catch(error => {
       console.log(error);

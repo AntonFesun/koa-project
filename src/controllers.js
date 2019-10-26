@@ -227,27 +227,29 @@ exports.signInPage = async (ctx) => {
 
 exports.signIn = async (ctx, next) => {
     const glasses = await Glasses.find({});
+    let admin;
+    let mainError;
     await passport.authenticate('local', (err, user) => {
         if (user) {
             let payload = {
                 id: user._id
             };
-            ctx.render('admin-panel.pug', {
-                glasses
-            });
+            admin = user;
             ctx.body = {
                 token: jwt.encode(payload, config.get('jwtSecret')),
                 success: true
+            };
+            if (user) {
+                ctx.render('admin-panel.pug', {
+                    glasses
+                });
             }
         } else {
             ctx.body = {
                 error: true
-            }
+            };
         }
     })(ctx, next);
-    await ctx.render('admin-panel.pug', {
-        glasses
-    });
 };
 
 exports.signUp = async (ctx) => {

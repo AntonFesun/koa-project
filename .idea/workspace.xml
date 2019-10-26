@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a08f867-167d-4e7e-a0a3-541d7fdf76ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_50ef205e561a8df2df5a37579e5d7f92.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_77b31d72c085b402e108f0e02a91b621.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_86b045903297bf699c4e3c4c9e4930e4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_d080e8afd1b5a1e9e7e27cbfe8fc27ab.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_d1568475555ed3535eedc2e2d3ac0bcd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_f5065da1a9b870d38eee9086db740d17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_0ba344fe11639227a993921554584912.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_7fdabd17b11918f010d61609900e2338.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_f517bb28ac04b6ad549cba3dd76025ed.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/scss/.sass-cache/c58f8a557869754dbd7f9daba451447eef8f6986/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/c58f8a557869754dbd7f9daba451447eef8f6986/style.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/signin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/parts/glasses-list.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/parts/glasses-list.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,12 +38,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="8.10.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/images" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -127,6 +116,7 @@
       <workItem from="1566118438502" duration="29516000" />
       <workItem from="1566638089231" duration="19265000" />
       <workItem from="1566725605953" duration="7549000" />
+      <workItem from="1572092270194" duration="7556000" />
     </task>
     <servers />
   </component>
