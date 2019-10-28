@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a08f867-167d-4e7e-a0a3-541d7fdf76ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_0ba344fe11639227a993921554584912.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_7fdabd17b11918f010d61609900e2338.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_f517bb28ac04b6ad549cba3dd76025ed.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_52d25742b63cfe2cf634be2317b19786.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_c21b8313c2d34103dc881d4044528682.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_c4beceb614ff0b2cb91a9e1be5156d16.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/signin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/signin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/passport/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/passport/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/passport/jwtStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/passport/jwtStrategy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/signin.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/signin.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +42,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../back" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />

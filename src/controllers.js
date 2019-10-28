@@ -8,6 +8,7 @@ const sms = new SMS(sms_id);
 const config = require('config');
 const passport = require('koa-passport');
 const jwt = require('jwt-simple');
+const cookies = require('cookies');
 
 exports.homePage = async (ctx) => {
     const brands = await Glasses.distinct("name");
@@ -225,31 +226,39 @@ exports.signInPage = async (ctx) => {
     await ctx.render('signin.pug');
 };
 
+// function *setACookie(token) {
+//     this.cookie.set('token', token, {httpOnly: true});
+// }
+
 exports.signIn = async (ctx, next) => {
     const glasses = await Glasses.find({});
     let admin;
-    let mainError;
-    await passport.authenticate('local', (err, user) => {
+    console.log(ctx);
+    await passport.authenticate('jwt', (err, user) => {
+        console.log(user);
+        admin = user;
         if (user) {
             let payload = {
                 id: user._id
             };
-            admin = user;
-            ctx.body = {
-                token: jwt.encode(payload, config.get('jwtSecret')),
-                success: true
-            };
-            if (user) {
-                ctx.render('admin-panel.pug', {
-                    glasses
-                });
-            }
+            ctx.cookies.set('token', "JWT " + jwt.encode(payload, config.get('jwtSecret')));
+            ctx.redirect('adminPanel');
         } else {
             ctx.body = {
                 error: true
             };
         }
     })(ctx, next);
+};
+
+
+exports.adminPage = async (ctx) => {
+    const token = ctx.cookies.get('token');
+    console.log(ctx.request);
+    const glasses = await Glasses.find({});
+    await ctx.render('admin-panel.pug', {
+        glasses
+    });
 };
 
 exports.signUp = async (ctx) => {
@@ -271,9 +280,3 @@ exports.signUp = async (ctx) => {
     }
 };
 
-exports.adminPage = async (ctx) => {
-  const glasses = await Glasses.find({});
-  await ctx.render('admin-panel.pug', {
-    glasses
-  });
-};

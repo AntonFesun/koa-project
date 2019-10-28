@@ -29,6 +29,8 @@
   },
   "dependencies": {
     "config": "^3.2.1",
+    "cookie-parser": "^1.4.4",
+    "cookies": "latest",
     "gulp-cli": "^2.2.0",
     "gulp-html-minifier2": "^1.1.11",
     "jwt-simple": "^0.5.6",
@@ -45,6 +47,7 @@
     "mongoose": "^5.6.5",
     "mongoose-beautiful-unique-validation": "^7.1.1",
     "nunjucks": "^3.2.0",
+    "passport-cookie": "^1.0.6",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "pug": "^2.0.4",
