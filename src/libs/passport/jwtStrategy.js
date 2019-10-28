@@ -18,18 +18,15 @@ const opts = {
 };
 
 module.exports = new JwtStrategy(opts, (jwtPayload, done) => {
-    console.log(opts);
     console.log(jwtPayload);
     Admin.findById(jwtPayload.id, (err, admin) => {
-        console.log(admin);
         if (err) {
             return done(err, false);
         }
-
         if (admin) {
-            return done(null, admin);
+            return done(err, admin);
         } else {
-            return done(null, false);
+            return done(err, admin);
         }
     });
 });

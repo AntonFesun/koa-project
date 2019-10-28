@@ -8,7 +8,6 @@ const sms = new SMS(sms_id);
 const config = require('config');
 const passport = require('koa-passport');
 const jwt = require('jwt-simple');
-const cookies = require('cookies');
 
 exports.homePage = async (ctx) => {
     const brands = await Glasses.distinct("name");
@@ -226,20 +225,12 @@ exports.signInPage = async (ctx) => {
     await ctx.render('signin.pug');
 };
 
-// function *setACookie(token) {
-//     this.cookie.set('token', token, {httpOnly: true});
-// }
-
 exports.signIn = async (ctx, next) => {
     const glasses = await Glasses.find({});
-    let admin;
-    console.log(ctx);
-    await passport.authenticate('jwt', (err, user) => {
-        console.log(user);
-        admin = user;
-        if (user) {
+    await passport.authenticate('local', (err, admin) => {
+        if (admin) {
             let payload = {
-                id: user._id
+                id: admin._id
             };
             ctx.cookies.set('token', "JWT " + jwt.encode(payload, config.get('jwtSecret')));
             ctx.redirect('adminPanel');
@@ -254,7 +245,6 @@ exports.signIn = async (ctx, next) => {
 
 exports.adminPage = async (ctx) => {
     const token = ctx.cookies.get('token');
-    console.log(ctx.request);
     const glasses = await Glasses.find({});
     await ctx.render('admin-panel.pug', {
         glasses

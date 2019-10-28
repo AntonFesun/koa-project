@@ -49,6 +49,7 @@ adminSchema.virtual('password')
     });
 
 adminSchema.methods.checkPassword = function (password) {
+    console.log(password);
     if (!password) return false;
     if (!this.passwordHash) return false;
 
