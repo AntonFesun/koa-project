@@ -3,6 +3,8 @@ const deleteCart = document.getElementById('delete-all');
 const buy = document.getElementById('buy');
 const wrapper = document.getElementsByClassName('container')[0];
 let emptyFields = document.getElementById('empty-fields');
+let addressSelect = document.getElementById('address');
+let npAddresses;
 
 renderGlasses();
 
@@ -10,6 +12,30 @@ deleteCart.onclick = function (event) {
     wrapper.innerHTML = "";
     cart = [];
     window.localStorage.removeItem('cart');
+};
+
+addressSelect.onclick = function () {
+    let dataNP = {
+        modelName: "Address",
+        calledMethod: "searchSettlements",
+        methodProperties: {
+            CityName: 'київ',
+            limit: 5
+        }
+    };
+    fetch('https://api.novaposhta.ua/v2.0/json/', {
+        method: 'post',
+        body: JSON.stringify(dataNP)
+    })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.log(error);
+        })
 };
 
 buy.onclick = function () {

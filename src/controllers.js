@@ -226,7 +226,6 @@ exports.signInPage = async (ctx) => {
 };
 
 exports.signIn = async (ctx, next) => {
-    const glasses = await Glasses.find({});
     await passport.authenticate('local', (err, admin) => {
         if (admin) {
             let payload = {

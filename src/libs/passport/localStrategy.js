@@ -9,7 +9,6 @@ const opts = {
 };
 
 module.exports = new LocalStrategy(opts, (req, login, password, done) => {
-
         Admin.findOne( {login}, (err, admin) => {
             if(err) {
                 return done(err);
@@ -20,9 +19,6 @@ module.exports = new LocalStrategy(opts, (req, login, password, done) => {
             if(!admin.checkPassword(password)) {
                 return done("Incorrect password", false);
             }
-            console.log(admin);
-
             return done(null, admin);
         });
-
     });
