@@ -119,28 +119,43 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0 auto; }
-    .content-container-gender h2 {
-      color: #fff;
-      font-family: "Montserrat";
-      font-size: 100px;
-      font-weight: 700;
-      text-transform: uppercase;
-      text-align: center;
-      cursor: default; }
-    .content-container-gender img {
-      margin-top: -50px;
-      margin-bottom: 85px; }
-    .content-container-gender-links {
-      max-width: 400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between; }
-      .content-container-gender-links-link {
-        text-decoration: none;
+    .content-container-gender {
+      position: relative; }
+      .content-container-gender h2 {
+        color: #fff;
+        font-family: "Montserrat";
+        font-size: 100px;
+        font-weight: 700;
         text-transform: uppercase;
-        font-size: 15px;
-        letter-spacing: 1.8px;
-        color: #a77c5a; }
+        text-align: center;
+        cursor: default;
+        position: absolute;
+        opacity: 0.2;
+        width: 100%; }
+      .content-container-gender img {
+        margin-top: -50px;
+        margin-bottom: 85px; }
+      .content-container-gender-video {
+        max-width: 600px;
+        transition: .5s; }
+        .content-container-gender-video:hover {
+          transform: scale(1.1); }
+      .content-container-gender-links {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        align-items: center;
+        height: 21%;
+        bottom: 4px; }
+        .content-container-gender-links-link {
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 15px;
+          letter-spacing: 1.8px;
+          color: white; }
 
 .brands {
   padding-top: 50px;
@@ -270,7 +285,8 @@ header {
   .item-photo {
     width: 300px;
     height: 300px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    object-fit: cover; }
   .item-name, .item-id {
     font-family: "Montserrat";
     font-size: 18px;

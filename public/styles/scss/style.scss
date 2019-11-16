@@ -104,32 +104,49 @@ header {
     margin: 0 auto;
 
     &-gender {
+      position: relative;
       h2 {
-        color: $header_2_color;
+        color: #fff;
         font-family: "Montserrat";
         font-size: 100px;
         font-weight: 700;
         text-transform: uppercase;
         text-align: center;
         cursor: default;
+        position: absolute;
+        opacity: 0.2;
+        width: 100%;
       }
       img {
         margin-top: -50px;
         margin-bottom: 85px;
       }
 
+      &-video {
+        max-width: 600px;
+        transition: .5s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
       &-links {
-        max-width: 400px;
+        width: 100%;
         margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        align-items: center;
+        height: 21%;
+        bottom: 4px;
 
         &-link {
           text-decoration: none;
           text-transform: uppercase;
           font-size: 15px;
           letter-spacing: 1.8px;
-          color: $link_color2;
+          color: lighten($link_color2, 50%);
         }
       }
     }
@@ -292,6 +309,7 @@ header {
     width: 300px;
     height: 300px;
     margin-bottom: 10px;
+    object-fit: cover;
   }
   &-name, &-id {
     font-family: "Montserrat";

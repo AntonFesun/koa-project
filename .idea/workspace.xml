@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a08f867-167d-4e7e-a0a3-541d7fdf76ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_5925dd7cd85c5f9e848dae23a16f02d0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_af6cbe4757c1d6945c3aad83ccb3a5a2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/db_images/upload_b2964459ceb7c2ca9a55ef0c2a5a299a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locales/en.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locales/ru.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locales/ua.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/video/zegna.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/_animation.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/_single-glasses.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/_var.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/style.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locales/ru.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libs/passport/localStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/passport/localStrategy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/cart-user.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/cart-user.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/ua.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/ua.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/index.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +33,7 @@
         <option value="Pug File" />
         <option value="style" />
         <option value="JavaScript File" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -46,7 +50,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/video" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -54,18 +58,18 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/assets/video" />
+      <recent name="$PROJECT_DIR$/public/assets/images" />
+      <recent name="$PROJECT_DIR$/public/scripts" />
+      <recent name="$PROJECT_DIR$/src/templates" />
+      <recent name="$PROJECT_DIR$/src/styles" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/libs/passport" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/assets/images" />
-      <recent name="$PROJECT_DIR$/public/scripts" />
-      <recent name="$PROJECT_DIR$/src/templates" />
-      <recent name="$PROJECT_DIR$/src/styles" />
-      <recent name="$PROJECT_DIR$/src/assets/images/img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -130,7 +134,8 @@
       <workItem from="1572638437129" duration="20000" />
       <workItem from="1573379037442" duration="3767000" />
       <workItem from="1573500418222" duration="24000" />
-      <workItem from="1573899322762" duration="2919000" />
+      <workItem from="1573899322762" duration="5450000" />
+      <workItem from="1573910072842" duration="6259000" />
     </task>
     <servers />
   </component>

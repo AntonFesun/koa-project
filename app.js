@@ -10,7 +10,7 @@ const passport = require('./src/libs/passport/index');
 const mongoose = require('mongoose');
 const beautifulUnique = require('mongoose-beautiful-unique-validation');
 const locale = require('koa-locale');
-const i18n = require('koa-i18n');
+const sass = require('koa-sass');
 
 mongoose.connect(config.get('databaseUrl'), {
     useNewUrlParser: true,
@@ -46,23 +46,10 @@ app.use(bodyParser({
   urlencoded: true,
 }));
 
-app.use(i18n(app, {
-  directory: './config/locales',
-  locales: ['ru', 'en'], //  `zh-CN` defualtLocale, must match the locales to the filenames
-  modes: [
-    'query',                //  optional detect querystring - `/?locale=en-US`
-    'subdomain',            //  optional detect subdomain   - `zh-CN.koajs.com`
-    'cookie',               //  optional detect cookie      - `Cookie: locale=zh-TW`
-    'header',               //  optional detect header      - `Accept-Language: zh-CN,zh;q=0.5`
-    'url',                  //  optional detect url         - `/en`
-    'tld',                  //  optional detect tld(the last domain) - `koajs.cn`
-    function() {}           //  optional custom function (will be bound to the koa context)
-  ]
+app.use(sass({
+  src:  __dirname + '/public/styles/',
+  dest: __dirname + '/public/'
 }));
-
-app.use(function (ctx) {
-  ctx.body = ctx.i18n.__('any key');
-});
 
 app.use(serve(path.join(__dirname, '/public')));
 
