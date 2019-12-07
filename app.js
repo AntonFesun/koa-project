@@ -45,19 +45,17 @@ app.use(bodyParser({
   multipart: true,
   urlencoded: true,
 }));
-
-app.use(sass({
-  src:  __dirname + '/public/styles/',
-  dest: __dirname + '/public/'
-}));
+//
+// app.use(sass({
+//   src:  __dirname + '/public/styles/',
+//   dest: __dirname + '/public/'
+// }));
 
 app.use(serve(path.join(__dirname, '/public')));
 
 router.use('/', require('./src/routes').routes());
 
 app.use(router.routes());
-
-
 
 console.log(config.get('port'));
 app.listen(config.get('port'));

@@ -7,7 +7,8 @@ let summOfGlasses = 0;
 let counter = doc.getElementById('counter');
 const searchToggle = doc.getElementById('search-toggle');
 const searchInput = doc.getElementById('search-input');
-searchToggle.onclick = function (event) {
+const form = doc.getElementById('search-form');
+form.onsubmit = function (event) {
     event.preventDefault();
     const searchRequest = {request: searchInput.value};
     fetch('find', {

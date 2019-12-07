@@ -1,7 +1,7 @@
 @import "var";
 @import "animation";
 @import "single-glasses";
-
+@import "mobile-menu";
 
 * {
   margin: 0;
@@ -20,7 +20,8 @@ header {
   background-color: $back;
   width: 100%;
   font-family: "Roboto";
-  padding: 20px 0;
+  padding: 20px 50px;
+  box-sizing: border-box;
 
   .site-name {
     color: $text_color;
@@ -37,10 +38,38 @@ header {
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
+    @media (max-width: 1160px) {
+      min-width: unset;
+    }
+
+    @media (max-width: 1060px) {
+      display: none;
+    }
 
     &-link {
       color: $link_color;
       text-decoration: none;
+      border-bottom: 1px solid $back;
+      transition: .2s;
+      text-align: center;
+
+      &:hover {
+        border-bottom: 1px solid $link_color;
+      }
+
+      @media (max-width: 1160px) {
+        margin-right: 20px;
+        &:first-child {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  .navbar-mobile {
+    display: none;
+    @media (max-width: 1060px) {
+      display: block;
     }
   }
 
@@ -104,18 +133,14 @@ header {
     margin: 0 auto;
 
     &-gender {
-      position: relative;
       h2 {
-        color: #fff;
+        color: $header_2_color;
         font-family: "Montserrat";
         font-size: 100px;
         font-weight: 700;
         text-transform: uppercase;
         text-align: center;
         cursor: default;
-        position: absolute;
-        opacity: 0.2;
-        width: 100%;
       }
       img {
         margin-top: -50px;
@@ -123,30 +148,27 @@ header {
       }
 
       &-video {
-        max-width: 600px;
-        transition: .5s;
-        &:hover {
-          transform: scale(1.1);
-        }
+
       }
 
       &-links {
-        width: 100%;
+        max-width: 400px;
         margin: 0 auto;
         display: flex;
-        justify-content: space-around;
-        background: rgba(0, 0, 0, 0.5);
-        position: absolute;
-        align-items: center;
-        height: 21%;
-        bottom: 4px;
+        justify-content: space-between;
 
         &-link {
           text-decoration: none;
           text-transform: uppercase;
           font-size: 15px;
           letter-spacing: 1.8px;
-          color: lighten($link_color2, 50%);
+          color: $link_color2;
+          border-bottom: 1px solid $back;
+          transition: .2s;
+
+          &:hover {
+            border-bottom: 1px solid $link_color2;
+          }
         }
       }
     }
@@ -250,7 +272,7 @@ header {
     display: block;
     height: 20px;
     width: 3px;
-    background-color: #a77c5a;
+    background-color: $link_color2;
     top: 0;
     left: 8px;
   }
@@ -260,7 +282,7 @@ header {
     display: block;
     height: 20px;
     width: 3px;
-    background-color: #a77c5a;
+    background-color: $link_color2;
     transform: rotate(90deg);
     top: 0;
     left: 8px;
@@ -289,7 +311,7 @@ header {
     display: block;
     height: 20px;
     width: 3px;
-    background-color: #a77c5a;
+    background-color: $link_color2;
     transform: rotate(90deg);
     top: 0;
     left: 8px;
@@ -455,9 +477,14 @@ button.cart-form-item {
 
     &-text {
       width: calc(100% - 50px);
+      min-width: 100px;
       line-height: 30px;
       border: 0;
       padding-left: 10px;
+
+      &:focus {
+        outline: none;
+      }
     }
 
     #search-toggle {

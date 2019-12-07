@@ -54,7 +54,8 @@ header {
   background-color: #f2ebe6;
   width: 100%;
   font-family: "Roboto";
-  padding: 20px 0; }
+  padding: 20px 50px;
+  box-sizing: border-box; }
   header .site-name {
     color: #303437;
     font-size: 48px;
@@ -68,9 +69,30 @@ header {
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase; }
+    @media (max-width: 1160px) {
+      header .navbar {
+        min-width: unset; } }
+    @media (max-width: 1060px) {
+      header .navbar {
+        display: none; } }
     header .navbar-link {
       color: #212121;
-      text-decoration: none; }
+      text-decoration: none;
+      border-bottom: 1px solid #f2ebe6;
+      transition: .2s;
+      text-align: center; }
+      header .navbar-link:hover {
+        border-bottom: 1px solid #212121; }
+      @media (max-width: 1160px) {
+        header .navbar-link {
+          margin-right: 20px; }
+          header .navbar-link:first-child {
+            margin-left: 20px; } }
+  header .navbar-mobile {
+    display: none; }
+    @media (max-width: 1060px) {
+      header .navbar-mobile {
+        display: block; } }
   header .cart {
     color: #303437;
     text-transform: uppercase;
@@ -119,43 +141,32 @@ header {
     display: flex;
     justify-content: space-between;
     margin: 0 auto; }
-    .content-container-gender {
-      position: relative; }
-      .content-container-gender h2 {
-        color: #fff;
-        font-family: "Montserrat";
-        font-size: 100px;
-        font-weight: 700;
+    .content-container-gender h2 {
+      color: #fff;
+      font-family: "Montserrat";
+      font-size: 100px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      cursor: default; }
+    .content-container-gender img {
+      margin-top: -50px;
+      margin-bottom: 85px; }
+    .content-container-gender-links {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between; }
+      .content-container-gender-links-link {
+        text-decoration: none;
         text-transform: uppercase;
-        text-align: center;
-        cursor: default;
-        position: absolute;
-        opacity: 0.2;
-        width: 100%; }
-      .content-container-gender img {
-        margin-top: -50px;
-        margin-bottom: 85px; }
-      .content-container-gender-video {
-        max-width: 600px;
-        transition: .5s; }
-        .content-container-gender-video:hover {
-          transform: scale(1.1); }
-      .content-container-gender-links {
-        width: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
-        background: rgba(0, 0, 0, 0.5);
-        position: absolute;
-        align-items: center;
-        height: 21%;
-        bottom: 4px; }
-        .content-container-gender-links-link {
-          text-decoration: none;
-          text-transform: uppercase;
-          font-size: 15px;
-          letter-spacing: 1.8px;
-          color: white; }
+        font-size: 15px;
+        letter-spacing: 1.8px;
+        color: #a77c5a;
+        border-bottom: 1px solid #f2ebe6;
+        transition: .2s; }
+        .content-container-gender-links-link:hover {
+          border-bottom: 1px solid #a77c5a; }
 
 .brands {
   padding-top: 50px;
@@ -397,9 +408,12 @@ button.cart-form-item {
     flex-direction: row; }
     .container-buttons .search-text {
       width: calc(100% - 50px);
+      min-width: 100px;
       line-height: 30px;
       border: 0;
       padding-left: 10px; }
+      .container-buttons .search-text:focus {
+        outline: none; }
     .container-buttons .search #search-toggle {
       background: none;
       border: none;

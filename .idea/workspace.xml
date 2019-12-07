@@ -2,23 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a08f867-167d-4e7e-a0a3-541d7fdf76ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/video/zegna.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/_animation.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/_single-glasses.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/_var.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/style.scssc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locales/ru.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/_mobile-menu.scssc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles/scss/_mobile-menu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/_var.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/_var.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/style.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/.sass-cache/ac266e73dc54dfe8bb1b2a3e8cd409dd28eb416d/style.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/scss/_var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/_var.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/scss/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/ua.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/ua.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/parts/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/parts/footer.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/parts/header.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/parts/header.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +30,8 @@
         <option value="HTML File" />
         <option value="Pug File" />
         <option value="style" />
-        <option value="JavaScript File" />
         <option value="package.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -50,7 +48,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/video" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -135,7 +133,11 @@
       <workItem from="1573379037442" duration="3767000" />
       <workItem from="1573500418222" duration="24000" />
       <workItem from="1573899322762" duration="5450000" />
-      <workItem from="1573910072842" duration="6259000" />
+      <workItem from="1573910072842" duration="7613000" />
+      <workItem from="1573993421161" duration="7415000" />
+      <workItem from="1574098911437" duration="16000" />
+      <workItem from="1575451770394" duration="682000" />
+      <workItem from="1575704474767" duration="319000" />
     </task>
     <servers />
   </component>
