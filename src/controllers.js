@@ -10,6 +10,7 @@ const passport = require('koa-passport');
 const jwt = require('jwt-simple');
 
 exports.homePage = async (ctx) => {
+    console.log(ctx.i18n);
     const brands = await Glasses.distinct("name");
     await ctx.render('index.pug', {brands});
 };

@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a08f867-167d-4e7e-a0a3-541d7fdf76ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/locales/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/locales/ua.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/index.pug" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +40,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -43,18 +48,18 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/assets/video" />
-      <recent name="$PROJECT_DIR$/public/assets/images" />
-      <recent name="$PROJECT_DIR$/public/scripts" />
-      <recent name="$PROJECT_DIR$/src/templates" />
-      <recent name="$PROJECT_DIR$/src/styles" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/libs/passport" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/public/assets/video" />
+      <recent name="$PROJECT_DIR$/public/assets/images" />
+      <recent name="$PROJECT_DIR$/public/scripts" />
+      <recent name="$PROJECT_DIR$/src/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -125,6 +130,7 @@
       <workItem from="1574098911437" duration="16000" />
       <workItem from="1575451770394" duration="682000" />
       <workItem from="1575704474767" duration="319000" />
+      <workItem from="1575915373922" duration="9664000" />
     </task>
     <servers />
   </component>
