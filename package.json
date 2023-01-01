@@ -28,7 +28,7 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
-    "config": "^3.2.1",
+    "config": "^3.3.8",
     "cookie-parser": "^1.4.4",
     "cookies": "latest",
     "gulp-cli": "^2.2.0",
