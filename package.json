@@ -51,7 +51,7 @@
     "mongoose-beautiful-unique-validation": "^7.1.1",
     "nunjucks": "^3.2.0",
     "passport-cookie": "^1.0.6",
-    "passport-jwt": "^4.0.0",
+    "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "pug": "^2.0.4",
     "sms_ru": "0.0.1"
